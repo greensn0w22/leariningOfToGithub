@@ -1,0 +1,42 @@
+/*
+ * 3dprinter.h
+ *
+ *  Created on: 25 févr. 2020
+ *      Author: Julien
+ */
+
+#ifndef PRINTER3DCLASS_H_
+#define PRINTER3DCLASS_H_
+
+#include <stdio.h>
+#include "serialinterface.h"
+#include "heat.h"
+
+
+class printer3d {
+
+
+	heat_c    	*heat;
+	serialInt 	*Int;
+	uint8_t 	heatBlockTemp;
+	uint8_t 	heatBedTemp;
+
+
+/* public functions*/
+public:
+	printer3d();
+	~printer3d();
+
+	void printerMain(void);
+
+/* private functions*/
+private:
+	void tempSeeker(void);
+	void gcode(char* );
+	void execute(void);
+	void readSD(char* );
+};
+
+
+
+#endif /* 3DPRINTERCLASS_H_ */

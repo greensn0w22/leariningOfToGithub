@@ -1,0 +1,67 @@
+/*
+ * Uart2.h
+ *
+ *  Created on: 8 janv. 2020
+ *      Author: Julien
+ */
+
+#ifndef UART2_H_
+#define UART2_H_
+#include <stdint.h>
+
+enum TXD2{
+	P0_10 = 0x11,
+	P2_8 = 0x22
+
+
+};
+
+enum RXD2{
+	P0_11 = 0x11,
+	P2_9 = 0x22
+};
+
+enum BaudRate{
+	_115_200,
+	_230_400,
+	_460_800
+
+};
+
+enum Parity{
+	Disable = 0,
+	Odd = 0x10,
+	Even,
+	Force_1,
+	Force_0
+};
+
+enum Interupt{
+	RX_Int,
+	Tx_Int,
+	Disable
+};
+
+class Uart2{
+	private : //Fonctions
+		Uart2();
+		~Uart2();
+	public: //Fonctions
+		Uart2(
+			TXD2,
+			RXD2,
+			BaudRate,
+			Parity,
+			Interupt
+			);
+
+
+
+	private: //Variables
+		static int allReadyDeclared;
+
+	public: //Variables
+
+};
+
+#endif /* UART2_H_ */

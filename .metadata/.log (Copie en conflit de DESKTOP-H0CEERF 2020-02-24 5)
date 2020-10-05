@@ -1,0 +1,338 @@
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2020-02-24 19:38:16.621
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-download
+Error message from debugger back end:
+No executable file specified.\nUse the "file" or "exec-file" command.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:228)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:101)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:90)
+	at com.crt.dsfdebug.dsf.override.CRTGdbLaunchDelegate.launch(CRTGdbLaunchDelegate.java:102)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.Exception: No executable file specified.\nUse the "file" or "exec-file" command.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:943)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2020-02-24 19:38:16.622
+!MESSAGE Failed to execute MI command:
+-target-download
+Error message from debugger back end:
+No executable file specified.\nUse the "file" or "exec-file" command.
+!STACK 0
+java.lang.Exception: No executable file specified.\nUse the "file" or "exec-file" command.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:943)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+
+!ENTRY com.crt.log 1 0 2020-02-24 19:38:16.947
+!MESSAGE Stream is null in null
+
+!ENTRY com.crt.log 1 0 2020-02-24 19:38:25.275
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-02-24 19:38:25.481
+!MESSAGE RedlinkServer telnet session connected on port 3025->55137 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.make.core 4 0 2020-02-24 19:38:25.641
+!MESSAGE Error accessing scanner config file for project 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error accessing scanner config file for project 
+	at org.eclipse.cdt.make.internal.core.scannerconfig.DiscoveredScannerInfoStore.saveDiscoveredScannerInfoToState(DiscoveredScannerInfoStore.java:306)
+	at org.eclipse.cdt.make.internal.core.scannerconfig.DiscoveredPathManager.updateDiscoveredInfo(DiscoveredPathManager.java:255)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector.updateScannerConfiguration(PerProjectSICollector.java:231)
+	at com.crt.advproject.specs.CRTPerProjectSICollector.updateScannerConfiguration(CRTPerProjectSICollector.java:41)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil$2.run(CfgSCJobsUtil.java:144)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:826)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil.updateScannerConfiguration(CfgSCJobsUtil.java:155)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:210)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:154)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:120)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:403)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:544)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:112)
+	at com.crt.debugcommon.emulator.BuildUtils.buildProjects(BuildUtils.java:174)
+	at com.crt.debugcommon.emulator.BuildUtils.access$0(BuildUtils.java:168)
+	at com.crt.debugcommon.emulator.BuildUtils$2.run(BuildUtils.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.io.FileNotFoundException: C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\.metadata\.plugins\org.eclipse.cdt.make.core\lpc_board_nxp_lpcxpresso_1769.sc (L’opération demandée n’a pu s’accomplir sur un fichier ayant une section mappée utilisateur ouverte)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.eclipse.cdt.make.internal.core.scannerconfig.DiscoveredScannerInfoStore.saveDiscoveredScannerInfoToState(DiscoveredScannerInfoStore.java:302)
+	... 27 more
+!SUBENTRY 1 org.eclipse.cdt.make.core 4 -1 2020-02-24 19:38:25.641
+!MESSAGE Error accessing scanner config file for project 
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\.metadata\.plugins\org.eclipse.cdt.make.core\lpc_board_nxp_lpcxpresso_1769.sc (L’opération demandée n’a pu s’accomplir sur un fichier ayant une section mappée utilisateur ouverte)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.eclipse.cdt.make.internal.core.scannerconfig.DiscoveredScannerInfoStore.saveDiscoveredScannerInfoToState(DiscoveredScannerInfoStore.java:302)
+	at org.eclipse.cdt.make.internal.core.scannerconfig.DiscoveredPathManager.updateDiscoveredInfo(DiscoveredPathManager.java:255)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector.updateScannerConfiguration(PerProjectSICollector.java:231)
+	at com.crt.advproject.specs.CRTPerProjectSICollector.updateScannerConfiguration(CRTPerProjectSICollector.java:41)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil$2.run(CfgSCJobsUtil.java:144)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:826)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil.updateScannerConfiguration(CfgSCJobsUtil.java:155)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:210)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:154)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:120)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:403)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:544)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:112)
+	at com.crt.debugcommon.emulator.BuildUtils.buildProjects(BuildUtils.java:174)
+	at com.crt.debugcommon.emulator.BuildUtils.access$0(BuildUtils.java:168)
+	at com.crt.debugcommon.emulator.BuildUtils$2.run(BuildUtils.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY com.crt.debugcommon 4 0 2020-02-24 19:38:26.572
+!MESSAGE Unable to parse ProbeList output to get probe ref count: [, auatrr=NPSmcnutr, ecito  P1Ux MI-A .., eilNbr=00E0, I:D=1C:12Pt  \i#d1c&i03&i0#&d33000#415b-1f1-8b011003}, spn=FLEWrIiilzd=FLEWrPooo JA, oeCniue FL, atie=6RfrneCut=0HsW  AS, aEM=FLEHsTG=TU, aSD=TUPb ye=CSSDP, rb eeec on]
+
+!ENTRY com.crt.log 1 0 2020-02-24 19:38:27.046
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-02-24 19:38:32.844
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Internal error building project SD_Card configuration Debug
+	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:149)
+	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:403)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:544)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:112)
+	at com.crt.debugcommon.emulator.BuildUtils.buildProjects(BuildUtils.java:174)
+	at com.crt.debugcommon.emulator.BuildUtils.access$0(BuildUtils.java:168)
+	at com.crt.debugcommon.emulator.BuildUtils$2.run(BuildUtils.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.cdt.core.CCorePlugin.getCProjectDescription(CCorePlugin.java:879)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2$ScannerConfigInfoSet.load(ScannerConfigInfoFactory2.java:100)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2$ScannerConfigInfoSet.<init>(ScannerConfigInfoFactory2.java:94)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2.createInfoSet(ScannerConfigInfoFactory2.java:1372)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigProfileManager.createScannerConfigBuildInfo2Set(ScannerConfigProfileManager.java:214)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.getContainer(CfgScannerConfigInfoFactory2.java:113)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.createMap(CfgScannerConfigInfoFactory2.java:138)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.getInfo(CfgScannerConfigInfoFactory2.java:79)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getContextInfo(CfgDiscoveredPathManager.java:421)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getContextInfo(CfgDiscoveredPathManager.java:406)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getDiscoveredInfo(CfgDiscoveredPathManager.java:168)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ProfileInfoProvider.getEntryValues(ProfileInfoProvider.java:65)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildEntryStorage.getDiscoveredEntries(BuildEntryStorage.java:200)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildEntryStorage.putEntriesToLevel(BuildEntryStorage.java:190)
+	at org.eclipse.cdt.core.settings.model.util.AbstractEntryStorage.initCache(AbstractEntryStorage.java:71)
+	at org.eclipse.cdt.core.settings.model.util.AbstractEntryStorage.getEntries(AbstractEntryStorage.java:34)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildLanguageData.getEntries(BuildLanguageData.java:161)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.getEntriesToCopy(CDefaultLanguageData.java:101)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.createStore(CDefaultLanguageData.java:92)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.copySettingsFrom(CDefaultLanguageData.java:85)
+	at org.eclipse.cdt.internal.core.settings.model.CLanguageSettingCache.copySettingsFrom(CLanguageSettingCache.java:47)
+	at org.eclipse.cdt.internal.core.settings.model.CLanguageSettingCache.<init>(CLanguageSettingCache.java:36)
+	at org.eclipse.cdt.internal.core.settings.model.CFolderDescriptionCache.copyLanguageData(CFolderDescriptionCache.java:79)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultFolderData.copyDataFrom(CDefaultFolderData.java:56)
+	at org.eclipse.cdt.internal.core.settings.model.CFolderDescriptionCache.<init>(CFolderDescriptionCache.java:38)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.copyFolderData(CConfigurationDescriptionCache.java:235)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultConfigurationData.copySettingsFrom(CDefaultConfigurationData.java:113)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.loadData(CConfigurationDescriptionCache.java:150)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescription.loadDatas(CProjectDescription.java:196)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.loadProjectDescription(XmlProjectDescriptionStorage.java:500)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:237)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:426)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:408)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:402)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:395)
+	at org.eclipse.cdt.core.resources.RefreshScopeManager.getResourcesToRefresh(RefreshScopeManager.java:398)
+	at org.eclipse.cdt.core.resources.RefreshScopeManager$2.run(RefreshScopeManager.java:370)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:364)
+	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:140)
+	... 21 more
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2020-02-24 19:38:32.844
+!MESSAGE Internal error building project SD_Card configuration Debug
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.core.CCorePlugin.getCProjectDescription(CCorePlugin.java:879)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2$ScannerConfigInfoSet.load(ScannerConfigInfoFactory2.java:100)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2$ScannerConfigInfoSet.<init>(ScannerConfigInfoFactory2.java:94)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2.createInfoSet(ScannerConfigInfoFactory2.java:1372)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigProfileManager.createScannerConfigBuildInfo2Set(ScannerConfigProfileManager.java:214)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.getContainer(CfgScannerConfigInfoFactory2.java:113)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.createMap(CfgScannerConfigInfoFactory2.java:138)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.getInfo(CfgScannerConfigInfoFactory2.java:79)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getContextInfo(CfgDiscoveredPathManager.java:421)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getContextInfo(CfgDiscoveredPathManager.java:406)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getDiscoveredInfo(CfgDiscoveredPathManager.java:168)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ProfileInfoProvider.getEntryValues(ProfileInfoProvider.java:65)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildEntryStorage.getDiscoveredEntries(BuildEntryStorage.java:200)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildEntryStorage.putEntriesToLevel(BuildEntryStorage.java:190)
+	at org.eclipse.cdt.core.settings.model.util.AbstractEntryStorage.initCache(AbstractEntryStorage.java:71)
+	at org.eclipse.cdt.core.settings.model.util.AbstractEntryStorage.getEntries(AbstractEntryStorage.java:34)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildLanguageData.getEntries(BuildLanguageData.java:161)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.getEntriesToCopy(CDefaultLanguageData.java:101)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.createStore(CDefaultLanguageData.java:92)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.copySettingsFrom(CDefaultLanguageData.java:85)
+	at org.eclipse.cdt.internal.core.settings.model.CLanguageSettingCache.copySettingsFrom(CLanguageSettingCache.java:47)
+	at org.eclipse.cdt.internal.core.settings.model.CLanguageSettingCache.<init>(CLanguageSettingCache.java:36)
+	at org.eclipse.cdt.internal.core.settings.model.CFolderDescriptionCache.copyLanguageData(CFolderDescriptionCache.java:79)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultFolderData.copyDataFrom(CDefaultFolderData.java:56)
+	at org.eclipse.cdt.internal.core.settings.model.CFolderDescriptionCache.<init>(CFolderDescriptionCache.java:38)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.copyFolderData(CConfigurationDescriptionCache.java:235)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultConfigurationData.copySettingsFrom(CDefaultConfigurationData.java:113)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.loadData(CConfigurationDescriptionCache.java:150)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescription.loadDatas(CProjectDescription.java:196)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.loadProjectDescription(XmlProjectDescriptionStorage.java:500)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:237)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:426)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:408)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:402)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:395)
+	at org.eclipse.cdt.core.resources.RefreshScopeManager.getResourcesToRefresh(RefreshScopeManager.java:398)
+	at org.eclipse.cdt.core.resources.RefreshScopeManager$2.run(RefreshScopeManager.java:370)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:364)
+	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:140)
+	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:403)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:544)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:112)
+	at com.crt.debugcommon.emulator.BuildUtils.buildProjects(BuildUtils.java:174)
+	at com.crt.debugcommon.emulator.BuildUtils.access$0(BuildUtils.java:168)
+	at com.crt.debugcommon.emulator.BuildUtils$2.run(BuildUtils.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2020-02-24 19:38:32.845
+!MESSAGE Internal error building project SD_Card configuration Debug
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.core.CCorePlugin.getCProjectDescription(CCorePlugin.java:879)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2$ScannerConfigInfoSet.load(ScannerConfigInfoFactory2.java:100)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2$ScannerConfigInfoSet.<init>(ScannerConfigInfoFactory2.java:94)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigInfoFactory2.createInfoSet(ScannerConfigInfoFactory2.java:1372)
+	at org.eclipse.cdt.make.internal.core.scannerconfig2.ScannerConfigProfileManager.createScannerConfigBuildInfo2Set(ScannerConfigProfileManager.java:214)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.getContainer(CfgScannerConfigInfoFactory2.java:113)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.createMap(CfgScannerConfigInfoFactory2.java:138)
+	at org.eclipse.cdt.build.internal.core.scannerconfig2.CfgScannerConfigInfoFactory2$CfgInfo.getInfo(CfgScannerConfigInfoFactory2.java:79)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getContextInfo(CfgDiscoveredPathManager.java:421)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getContextInfo(CfgDiscoveredPathManager.java:406)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.CfgDiscoveredPathManager.getDiscoveredInfo(CfgDiscoveredPathManager.java:168)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ProfileInfoProvider.getEntryValues(ProfileInfoProvider.java:65)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildEntryStorage.getDiscoveredEntries(BuildEntryStorage.java:200)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildEntryStorage.putEntriesToLevel(BuildEntryStorage.java:190)
+	at org.eclipse.cdt.core.settings.model.util.AbstractEntryStorage.initCache(AbstractEntryStorage.java:71)
+	at org.eclipse.cdt.core.settings.model.util.AbstractEntryStorage.getEntries(AbstractEntryStorage.java:34)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.BuildLanguageData.getEntries(BuildLanguageData.java:161)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.getEntriesToCopy(CDefaultLanguageData.java:101)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.createStore(CDefaultLanguageData.java:92)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultLanguageData.copySettingsFrom(CDefaultLanguageData.java:85)
+	at org.eclipse.cdt.internal.core.settings.model.CLanguageSettingCache.copySettingsFrom(CLanguageSettingCache.java:47)
+	at org.eclipse.cdt.internal.core.settings.model.CLanguageSettingCache.<init>(CLanguageSettingCache.java:36)
+	at org.eclipse.cdt.internal.core.settings.model.CFolderDescriptionCache.copyLanguageData(CFolderDescriptionCache.java:79)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultFolderData.copyDataFrom(CDefaultFolderData.java:56)
+	at org.eclipse.cdt.internal.core.settings.model.CFolderDescriptionCache.<init>(CFolderDescriptionCache.java:38)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.copyFolderData(CConfigurationDescriptionCache.java:235)
+	at org.eclipse.cdt.core.settings.model.extension.impl.CDefaultConfigurationData.copySettingsFrom(CDefaultConfigurationData.java:113)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.loadData(CConfigurationDescriptionCache.java:150)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescription.loadDatas(CProjectDescription.java:196)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.loadProjectDescription(XmlProjectDescriptionStorage.java:500)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:237)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:426)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:408)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:402)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:395)
+	at org.eclipse.cdt.core.resources.RefreshScopeManager.getResourcesToRefresh(RefreshScopeManager.java:398)
+	at org.eclipse.cdt.core.resources.RefreshScopeManager$2.run(RefreshScopeManager.java:370)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:364)
+	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:140)
+	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:403)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:544)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:112)
+	at com.crt.debugcommon.emulator.BuildUtils.buildProjects(BuildUtils.java:174)
+	at com.crt.debugcommon.emulator.BuildUtils.access$0(BuildUtils.java:168)
+	at com.crt.debugcommon.emulator.BuildUtils$2.run(BuildUtils.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-02-24 19:38:32.933
+!MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.eclipse.core.jobs 2 2 2020-02-24 19:38:33.873
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.crt.debugcommon.emulator.client.RedlinkServerClient$1
+
+!ENTRY org.eclipse.core.jobs 2 2 2020-02-24 19:38:33.881
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.crt.dsfdebug.dsf.override.CRTFinalLaunchSequence$TargetDiscoveryJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2020-02-24 19:38:33.888
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.debug.internal.ui.DebugUIPlugin$8
+
+!ENTRY org.eclipse.core.jobs 2 2 2020-02-24 19:38:33.895
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob

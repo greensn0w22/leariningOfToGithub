@@ -1,0 +1,6 @@
+17:29:16 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+make: Nothing to be done for `all'.
+
+17:29:16 Build Finished (took 115ms)
+

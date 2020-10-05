@@ -1,0 +1,42 @@
+#include "Uart2.h"
+#include "UART.h"
+#include "Macro.h"
+#include "Clock.h"
+#include "interrupt.h"
+#include "PinsFunctions.h"
+
+Uart2::Uart2(){}
+
+Uart2::Uart2(
+	TXD2 txd2 = P2_8,
+	RXD2 rxd2 = P2_9,
+	BaudRate = _115_200,
+	Parity = Pa_Disable,
+	Interupt = Int_Disable){
+
+	if(!allReadyDeclared){
+		allReadyDeclared++;
+
+		SB(24,PCONP);
+
+		//24MHz
+		PCLKSEL1 &= 0xFFFCFFFF;
+
+
+		if(txd2 == P2_8){
+
+			PINSEL4 = (PINSEL4&~(0X0000003<<(txd2>>4)))|((txd2&0x3)<<(txd2>>4));
+		}
+		else if(txd2 == P0_10){
+
+		}
+
+
+		if(rxd2 == P2_9){
+			PINSEL4 = (PINSEL4&~(0X0000003<<(rxd2>>4)))|((rxd2&0x3)<<(rxd2>>4));
+		}
+
+	}
+
+
+}

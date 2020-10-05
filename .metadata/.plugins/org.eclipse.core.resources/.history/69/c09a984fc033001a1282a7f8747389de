@@ -1,0 +1,17 @@
+#include "Uart2.h"
+#include "UART.h"
+#include "Macro.h"
+#include "Clock.h"
+#include "interrupt.h"
+#include "PinsFunctions.h"
+
+
+Uart2::Uart2(
+	P2_8,
+	P2_9,
+	_115_200,
+	Disable,
+	RX_Int
+	){
+
+}

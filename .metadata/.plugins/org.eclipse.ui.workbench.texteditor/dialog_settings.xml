@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="IO2Int" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="IO2Int"/>
+			<item value="motorInfo.Xdir"/>
+			<item value="counter"/>
+			<item value="axisRatio"/>
+			<item value="rit"/>
+			<item value="mM"/>
+			<item value="ISER"/>
+			<item value="IPR1"/>
+			<item value="FIO0PIN3"/>
+			<item value="PWM"/>
+			<item value="PCLK"/>
+			<item value="PCONP"/>
+			<item value="0xE000E010"/>
+			<item value="0xE000 E010"/>
+			<item value="sys"/>
+		</list>
+		<list key="replacehistory">
+			<item value="flag"/>
+			<item value="motorInfo"/>
+			<item value="U2-&gt;"/>
+			<item value="U2"/>
+			<item value="//U2."/>
+			<item value="TBL_X"/>
+			<item value="TBL_Y"/>
+			<item value="MAX_X"/>
+			<item value="MAX_Y"/>
+			<item value="=50"/>
+			<item value="101"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="284" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="1163" key="DIALOG_X_ORIGIN"/>
+		<item value="263" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

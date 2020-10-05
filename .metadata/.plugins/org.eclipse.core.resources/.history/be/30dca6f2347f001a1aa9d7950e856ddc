@@ -1,0 +1,709 @@
+/*
+ * 3dprinter.cpp
+ *
+ *  Created on: 25 févr. 2020
+ *      Author: Julien
+ */
+
+/**************************************
+ * 		PRIVATE TYPEDEF
+ *************************************/
+
+/**************************************
+ *			INCLUDES
+ *************************************/
+#include "LPC176x.h"
+#include "printer3dclass.h"
+#include "fonctionsLPC.h"
+#include <stdio.h>
+/**************************************
+ *		PRIVATE DEFENITION
+ *************************************/
+#define DEBUG_UART
+#define XY_STEPSIZE	50000	//0.0050000
+#define Z_STEPSIZE	3125	//0.0003125
+#define E_STEPSIZE	236250	//0.0236250
+
+#define X_ZERO_DIR	CLOCKWISE
+#define Y_ZERO_DIR	CLOCKWISE
+#define Z_ZERO_DIR	NON_CLOCKWISE
+#define E_ZERO_DIR	CLOCKWISE
+
+#ifndef _swap_uint32_t
+#define _swap_uint32_t(a, b) { uint32_t t = a; a = b; b = t; }
+#endif
+
+/**************************************
+ *		PRIVATE DECLARATION
+ *************************************/
+#ifdef __cplusplus
+extern "C"{
+static char SDbuffer[100] = {0};
+}
+#endif
+
+/**************************************
+ *		PRIVATE STRUCTURE
+ *************************************/
+#ifdef __cplusplus
+extern "C"{
+
+
+//utilisé par G1 et G0 pour savoir quel est le prochain stepper a bouger
+//0 = X, 1 = Y, 2 = Z, 3 = E
+struct map_t{
+	unsigned char B1:2;
+	unsigned char B2:2;
+	unsigned char B3:2;
+	unsigned char B4:2;
+};
+struct whoStep_t{
+	uint32_t 	numberOfStep; //max 10000*4
+	map_t		mouvement[10000];
+};
+flag_t flag = {0};
+gcodeInfo_t Ginf = {0};
+gCodeList_t gCodeList = {0};
+whoStep_t move = {0};
+}
+#endif
+
+/**************************************
+ *    PRIVATE FUNCTIONS DECLARATION
+ *************************************/
+static void gCodeDecoder(gCodeDecoder_t*, char* );
+static uint32_t removeDot(uint32_t beforeComa, uint32_t afterComa);
+static void gCodeSimulator(const char *code);
+static void cries(void);
+static void fillMoveStruct(map_t *pointer, uint8_t row, uint8_t value);
+///////////////////////////////////////
+/**************************************
+ *		PUBLIC	FUNCTIONS
+ *************************************/
+printer3d::printer3d()
+{
+	heat 	= new heat_c;
+	Int 	= new serialInt('*');
+
+	Int -> createLine("Progress", 1, 0, "%", true, 0, 100);
+	Int -> createLine("BlockTemp", 2, 0, "C", false, 0, 250);
+	Int -> createLine("BedTemp", 3, 0, "C", false, 0, 80);
+
+	/* Set flagimer */
+	__set_PCONP(PCRIT,1);
+	__set_PCLKSEL(PCLK_RIT,PCLKDIV_4);
+	RICTRL = 0; /* Disable flag during setup */
+	RICOMPVAL = 24000000;
+	RICOUNTER = 0;
+	ISER |= 1<<29;
+	RICTRL = 0x000000E; /* Enable flag */
+
+	/* Setup SystickTimer */
+	SYST_RVR = ((96000000/100)-1);
+	SYST_CSR = 7;
+
+	/* Setup GPIO Interrupts */
+	__set_PINSEL(2,10,0); //X
+	__set_PINSEL(2,11,0); //Y
+	__set_PINSEL(2,12,0); //Z
+
+	__set_PINMODE(2,10,2);
+	__set_PINMODE(2,11,2);
+	__set_PINMODE(2,12,2);
+
+	FIO2DIR1 &= (~0x1C);
+	IO2IntEnR = 0x1C00;
+	//IO2IntEnF = 0x1C00;
+
+	ISER = (0x1 << 21);
+
+}
+
+printer3d::~printer3d()
+{
+	delete Int;
+	delete heat;
+}
+
+/*************************************
+ * 		REAL MAIN
+ ************************************/
+void printer3d::printerMain()
+{
+
+	heat->newTemp(block,0);
+	Ginf.X = 1500000000;
+	Ginf.Y = 1500000000;
+	gCodeSimulator("G28");
+	mm.sleepXYE(false);
+
+	while(1){
+	#ifdef DEBUG_UART
+			char rxconsole;
+			rxconsole = Int->getRx();
+			if(rxconsole){
+				switch (rxconsole) {
+					case 's':
+						mm.sleepXYE(true);
+						break;
+					case '1':
+						gCodeSimulator("G0 X50.0");
+						break;
+					case '2':
+						gCodeSimulator("G0 Y0.0");
+						break;
+					case '3':
+						gCodeSimulator("G0 Y5.0");
+						break;
+					default:
+						break;
+				}
+			}
+	#endif
+
+
+		tempSeeker();
+
+		if(flag.gcodeExecute){
+			execute();
+		}
+
+		if(flag.SD){
+			flag.SD = 0;
+			readSD(SDbuffer);
+		}
+
+		if(flag.gCodeRead){
+			flag.gCodeRead = 0;
+			gcode(SDbuffer);
+		}
+
+
+		flag.endLoopFlag = 1;
+	}
+}
+
+/**************************************
+ *		PRIVATE	FUNCTIONS
+ **************************************/
+void printer3d::tempSeeker(void){
+	if(flag.flagGetHeatBlock){
+		flag.flagGetHeatBlock = 0;
+		heatBlockTemp = heat->getHeat(block);
+	}
+	if(flag.flagSerialBlockTemp){
+		flag.flagSerialBlockTemp = 0;
+		Int->updateLine(2, heatBlockTemp);
+	}
+	if(flag.flagPIDBlock){
+		flag.flagPIDBlock = 0;
+		heat->computePID(block ,heatBlockTemp);
+	}
+}
+
+void printer3d::execute(void){
+	//execute the current step ratio till the objective is joined
+	if(gCodeList.G0 == true){
+		static uint32_t i = 0, _plus4 = 0;
+		static uint8_t modulo;
+		//int newStep;
+		if(!Ginf.homeWait){
+			switch (modulo++){
+				case 0:
+					executeStep(move.mouvement[_plus4].B1);
+					break;
+				case 1:
+					executeStep(move.mouvement[_plus4].B2);
+					break;
+				case 2:
+					executeStep(move.mouvement[_plus4].B3);
+					break;
+				case 3:
+					executeStep(move.mouvement[_plus4].B4);
+					modulo = 0;
+					_plus4 += 1;
+					break;
+			}
+		}
+		i+=1;
+		if(i>move.numberOfStep){
+			gCodeList.G0 = false;
+			if(!gCodeList.G28){
+				flag.gcodeExecute = 0;
+			}
+			else{
+				Ginf.homeWait = 0;
+				Ginf.homeProtection = 0;
+			}
+			i = 0; _plus4 = 0; modulo = 0;
+		}
+	}
+	else if(gCodeList.G1 == true){
+		static uint32_t i = 0, _plus4 = 0;
+		static uint8_t modulo;
+		//int newStep;
+
+		switch (modulo++){
+			case 0:
+				executeStep(move.mouvement[_plus4].B1);
+				break;
+			case 1:
+				executeStep(move.mouvement[_plus4].B2);
+				break;
+			case 2:
+				executeStep(move.mouvement[_plus4].B3);
+				break;
+			case 3:
+				executeStep(move.mouvement[_plus4].B4);
+				modulo = 0;
+				_plus4 += 1;
+				break;
+		}
+		i+=1;
+		if(i>move.numberOfStep){
+			gCodeList.G1 = false;
+			i = 0; _plus4 = 0; modulo = 0;
+		}
+	}
+	else if(gCodeList.G28 == true){
+		static bool _XComplete = 0, _YComplete = 0, _ZComplete = 1, _speed = 1;
+		if(!_speed){
+			gCodeSimulator("M204 T200");
+			_speed = 0;
+		}
+		else if(!_XComplete){
+			static bool firstBack = 0;
+			if(!firstBack){
+				gCodeSimulator("G0 X0.0");
+				firstBack = 1;
+			}
+			else{
+				Ginf.homeProtection = 1;
+				gCodeSimulator("G0 X10.0");
+
+				_XComplete = 1;
+				firstBack = 0;
+			}
+		}
+		else if(!_YComplete){
+			static bool firstBack = 0;
+			if(!firstBack){
+
+				gCodeSimulator("G0 Y0.0");
+				firstBack = 1;
+			}
+			else{
+				Ginf.homeProtection = 1;
+				gCodeSimulator("G0 Y10.0");
+
+				_YComplete = 1;
+				firstBack = 0;
+			}
+		}
+
+		else if(!_ZComplete){
+			static bool firstBack = 0;
+			if(!firstBack){
+
+				gCodeSimulator("G0 Z0.0");
+				firstBack = 1;
+			}
+			else{
+				Ginf.homeProtection = 1;
+				gCodeSimulator("G0 Z.2");
+
+				_ZComplete = 0;
+				_XComplete = 0;
+				_YComplete = 0;
+				_speed = 0;
+				firstBack = 0;
+			}
+		}
+	}
+
+
+}
+
+void printer3d::readSD(char* buffer){
+	//read the next SD card line
+
+}
+
+void printer3d::gcode(char* buffer){
+	gCodeDecoder_t decoded;
+
+
+	gCodeDecoder(&decoded, buffer);
+
+	if(decoded.noOfParameter != 0){
+		switch(decoded.paramLetter[0]){
+			case 'G':
+				if(!GList(&decoded)) break; //if the gcode is supported by the 3Dprinter
+				flag.gcodeExecute = 1;	 	//a gcode have been found
+				break;
+			default:
+				break;
+		}
+	}
+
+}
+
+/* MAKE A STEP */
+void printer3d::executeStep(uint8_t step){
+	switch (step){
+		case 0 :
+			mm.step(_x);
+			break;
+		case 1 :
+			mm.step(_y);
+			break;
+		case 2 :
+			mm.step(_z);
+			break;
+		case 3 :
+			mm.step(_e);
+			break;
+	}
+}
+
+
+
+
+/* PREPARE G0G1 PARAMETERS BEFORE MAPPING THEM*/
+void printer3d::g0g1Parameter(bool g0g1, gCodeDecoder_t* pointer){
+	bool X=0,Y=0,Z=0,E=0;
+	int64_t temp0,temp1;
+
+	//TODO setup feedrate
+
+	for(int i=0; i < (pointer->noOfParameter); i++){
+		switch (pointer->paramLetter[i]){
+			case 'X' :
+				X = 1;
+				Ginf.ObjectiveX = removeDot(pointer->paramValue[i][0], pointer->paramValue[i][1]);
+				temp0 = Ginf.X;
+				temp1 = Ginf.ObjectiveX;
+				if((temp1-temp0) < 0)
+					mm.changeDir(_x, X_ZERO_DIR);
+				else
+					mm.changeDir(_x, (!X_ZERO_DIR));
+				break;
+			case 'Y' :
+				Y = 1;
+				Ginf.ObjectiveY = removeDot(pointer->paramValue[i][0], pointer->paramValue[i][1]);
+				temp0 = Ginf.Y;
+				temp1 = Ginf.ObjectiveY;
+				if((temp1-temp0) < 0)
+					mm.changeDir(_y, Y_ZERO_DIR);
+				else
+					mm.changeDir(_y, (!Y_ZERO_DIR));
+				break;
+			case 'Z' :
+				Z = 1;
+				Ginf.ObjectiveZ = removeDot(pointer->paramValue[i][0], pointer->paramValue[i][1]);
+				temp0 = Ginf.Z;
+				temp1 = Ginf.ObjectiveZ;
+				if((temp1-temp0) < 0)
+					mm.changeDir(_z, Z_ZERO_DIR);
+				else
+					mm.changeDir(_z, (!Z_ZERO_DIR));
+				break;
+			case 'E' :
+				E = 1;
+				Ginf.ObjectiveE = removeDot(pointer->paramValue[i][0], pointer->paramValue[i][1]);
+				temp0 = Ginf.E;
+				temp1 = Ginf.ObjectiveE;
+				if((temp1-temp0) < 0)
+					mm.changeDir(_e, E_ZERO_DIR);
+				else
+					mm.changeDir(_e, (!E_ZERO_DIR));
+				break;
+		}
+	}
+
+	pixelDraw(g0g1, X, Y, Z, E);
+}
+
+/* MAP THE MOTOR MOUVEMENT BEFORE EXECUTING IT */
+bool printer3d::pixelDraw(bool g0g1, bool X, bool Y, bool Z, bool E){
+	uint32_t y0;
+	uint32_t y1;
+	uint32_t x0;
+	uint32_t x1;
+
+	//uint32_t width	= 0;
+	//uint32_t height	= 0;
+	//uint32_t xReference = 0;
+	//uint32_t yReference = 0;
+	int32_t steep;
+	int32_t dx, dy;
+	int32_t err;
+	int32_t ystep;
+
+	int modulo = 0, _step4 =0;
+
+	if(X == true){
+		x0 = Ginf.X;
+		x1 = Ginf.ObjectiveX;
+	}
+	else {
+		x0 = 0;
+		x1 = 0;
+	}
+	if(Y == true){
+		y0 = Ginf.Y;
+		y1 = Ginf.ObjectiveY;
+	}
+	else {
+		y0 = 0;
+		y1 = 0;
+	}
+
+	//TODO intégrer Z et E
+
+	move.numberOfStep = 0;
+
+	/* NO OPTIMISATION FOR THIS VERSION
+	// Verticales lines Optimization.
+	if (x0 == x1)
+	{
+		if(y0 > y1)
+		{
+			width		= ((y0-y1)+1);
+			yReference	= y1;
+		}
+		else
+		{
+			width		= ((y1-y0)+1);
+			yReference 	= y0;
+		}
+
+		return 1;
+	}
+	// Horizontales lines Optimization.
+	else if (y0 == y1)
+	{
+		if(x0 > x1)
+		{
+			height		= (x0-x1)+1;
+			xReference 	= x1;
+		}
+		else
+		{
+			height		= (x1-x0)+1;
+			xReference 	= x0;
+		}
+
+		return lcd_DrawHorizontalLine(xReference, y0, height, color);
+	}
+	*/
+
+	steep = abs(y1 - y0) > abs(x1 - x0);
+
+	if (steep) //INVERT X AND Y IN THE EQUATION
+	{
+		_swap_uint32_t(x0, y0);
+		_swap_uint32_t(x1, y1);
+	}
+
+	if (x0 > x1)
+	{
+		_swap_uint32_t(x0, x1);
+		_swap_uint32_t(y0, y1);
+	}
+
+	dx = x1 - x0;
+	dy = abs(y1 - y0);
+
+	err = dx / 2;
+
+	if (y0 < y1) {
+		ystep = XY_STEPSIZE;
+		mm.changeDir(_y, !(Y_ZERO_DIR));
+	}
+	else {
+		ystep = -XY_STEPSIZE;
+		mm.changeDir(_y, (Y_ZERO_DIR));
+	}
+
+	for (; x0<x1; ) //anciennement <=
+	{
+
+		x0+= XY_STEPSIZE;
+		//X MOUVEMENT
+		if (steep)
+		{
+			fillMoveStruct(&move.mouvement[_step4], modulo, 1);
+		}
+		else
+		{
+			fillMoveStruct(&move.mouvement[_step4], modulo, 0);
+		}
+
+		err -= dy;
+		if (err < 0) //Y MOUVEMENT
+		{
+			y0 += ystep;
+			err += dx;
+			if (steep)
+			{
+				fillMoveStruct(&move.mouvement[_step4], modulo, 0);
+			}
+			else
+			{
+				fillMoveStruct(&move.mouvement[_step4], modulo, 1);
+			}
+			if(modulo++==3)
+				_step4++;
+			modulo %= 4;
+			move.numberOfStep++;
+		}
+
+		if(modulo++==3)
+			_step4++;
+		modulo %= 4;
+		move.numberOfStep++;
+
+	}
+
+	if(X)
+		Ginf.X = Ginf.ObjectiveX;
+	if(Y)
+		Ginf.Y = Ginf.ObjectiveY;
+	if(Z)
+		Ginf.Z = Ginf.ObjectiveZ;
+	if(E)
+		Ginf.E = Ginf.ObjectiveE;
+	return true;
+}
+
+/* PREPARE THE G PARAMETERS BEFORE EXECUTING THEM */
+bool printer3d::GList(gCodeDecoder_t* pointer){
+	switch (pointer->paramValue[0][0]){
+		case 0: //G0
+			//TODO SET F & set parameter automatically
+			g0g1Parameter(0, pointer);
+			gCodeList.G0 = true;
+
+			break;
+		case 1: //G1
+			//TODO
+			break;
+		case 28: //G28
+			gCodeList.G28 = 1; //call home
+			break;
+		default:
+			return 0; //the Gcode dosen't exist
+	}
+	return true;
+}
+/**************************************
+ *        PRIVATE FUNCTIONS
+ *************************************/
+static void gCodeDecoder(gCodeDecoder_t* pointer, char* buffer){
+	int i = 0, j = 0, k = 0;
+	//float tbl[2];
+
+	pointer->noOfParameter = 0; //reset parameter
+	if(*buffer == ';'){flag.SD = 1; return;}
+
+
+
+	pointer->paramLetter[i] = *(buffer++);
+	j = 0;
+	do{
+		if(*buffer == ';') break;
+		j++;
+	}while(*(buffer++) != ' ');
+	pointer->paramValue[i][0] = convStringToNum((buffer-j), (j-1));
+	pointer->paramValue[i][1] = 0;
+	i++;
+
+	while(((*buffer) != '\r') && ((*buffer) != ';')){
+		pointer->paramLetter[i] = *(buffer++);
+		if(k == 1)
+			pointer->paramValue[i-1][1] = 0;
+		k = 0;
+		do{
+			j = 0;
+			do{
+				j++; buffer++;
+			}while((*(buffer) != ' ') && (*(buffer) != '.') && (*(buffer) != '\n'));
+			pointer->paramValue[i][k++] = convStringToNum((buffer - j), j);
+			buffer++;
+		}while((*(buffer-1) != ' ') && (*(buffer) != '\r'));
+		i++;
+	}
+	if(k == 1)
+		pointer->paramValue[i-1][1] = 0;
+
+	pointer->noOfParameter = i;
+}
+
+
+static void gCodeSimulator(const char *code){
+	int i = 0;
+	do{
+		SDbuffer[i] = *(code+i);
+	}while(*(code+(++i)) != '\0');
+	SDbuffer[i++] = ' ';
+	SDbuffer[i] = ';';
+	flag.gCodeRead = 1;
+}
+
+
+/* Put the asked value in the move structure*/
+static void fillMoveStruct(map_t *pointer, uint8_t row, uint8_t value){
+	switch (row) {
+		case 0:
+			pointer->B1 = value;
+			break;
+		case 1:
+			pointer->B2 = value;
+			break;
+		case 2:
+			pointer->B2 = value;
+			break;
+		case 3:
+			pointer->B3 = value;
+			break;
+	}
+}
+
+/*
+ * Create one big number with the coma read from the SDbuffer
+ * 145.9345670 ->  1459345670 it easier to deal when doing math
+ * with them
+ *  */
+static uint32_t removeDot(uint32_t beforeComa, uint32_t afterComa){
+	uint32_t i=0;
+	uint64_t test;
+	if(afterComa != 0){
+		while(test != afterComa){
+			test = afterComa%power(10,i++);
+		};
+	}
+	return (beforeComa*power(10,7))+(afterComa*power(10,7-i+1));
+}
+
+
+/* if you ever get into this loop it is the end */
+static void cries(void){
+	//looping this forever
+	//to let you embrace the
+	//void filling your body
+	//for the duration of the
+	//program
+	while(true){
+		/* ***********************************
+		 * this loop does absolutely nothing
+		 * exactly like what you're doing with
+		 * your life
+		 * ***********************************/
+	}
+}
+
+
+
+
+

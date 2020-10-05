@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;heat/src/heat.c&apos; to &apos;heat.cpp&apos;" description="Rename resource &apos;heat.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/heat.c" name="heat.cpp" stamp="1582675975274" updateReferences="true"/>
+</session>

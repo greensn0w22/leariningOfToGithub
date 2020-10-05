@@ -1,0 +1,628 @@
+17:19:22 **** Clean-only build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r clean 
+rm -rf  ./src/board.o ./src/board_sysinit.o ./src/lpc_phy_smsc87x0.o  ./src/board.d ./src/board_sysinit.d ./src/lpc_phy_smsc87x0.d  liblpc_board_nxp_lpcxpresso_1769.a
+ 
+17:19:23 **** Clean-only build of configuration Debug for project lpc_chip_175x_6x ****
+make -r clean 
+rm -rf  ./src/adc_17xx_40xx.o ./src/can_17xx_40xx.o ./src/chip_17xx_40xx.o ./src/clock_17xx_40xx.o ./src/cmp_17xx_40xx.o ./src/crc_17xx_40xx.o ./src/dac_17xx_40xx.o ./src/eeprom_17xx_40xx.o ./src/emc_17xx_40xx.o ./src/enet_17xx_40xx.o ./src/gpdma_17xx_40xx.o ./src/gpio_17xx_40xx.o ./src/gpioint_17xx_40xx.o ./src/i2c_17xx_40xx.o ./src/i2s_17xx_40xx.o ./src/iap.o ./src/iocon_17xx_40xx.o ./src/lcd_17xx_40xx.o ./src/pmu_17xx_40xx.o ./src/ring_buffer.o ./src/ritimer_17xx_40xx.o ./src/rtc_17xx_40xx.o ./src/sdc_17xx_40xx.o ./src/sdmmc_17xx_40xx.o ./src/spi_17xx_40xx.o ./src/ssp_17xx_40xx.o ./src/stopwatch_17xx_40xx.o ./src/sysctl_17xx_40xx.o ./src/sysinit_17xx_40xx.o ./src/timer_17xx_40xx.o ./src/uart_17xx_40xx.o ./src/wwdt_17xx_40xx.o  ./src/adc_17xx_40xx.d ./src/can_17xx_40xx.d ./src/chip_17xx_40xx.d ./src/clock_17xx_40xx.d ./src/cmp_17xx_40xx.d ./src/crc_17xx_40xx.d ./src/dac_17xx_40xx.d ./src/eeprom_17xx_40xx.d ./src/emc_17xx_40xx.d ./src/enet_17xx_40xx.d ./src/gpdma_17xx_40xx.d ./src/gpio_17xx_40xx.d ./src/gpioint_17xx_40xx.d ./src/i2c_17xx_40xx.d ./src/i2s_17xx_40xx.d ./src/iap.d ./src/iocon_17xx_40xx.d ./src/lcd_17xx_40xx.d ./src/pmu_17xx_40xx.d ./src/ring_buffer.d ./src/ritimer_17xx_40xx.d ./src/rtc_17xx_40xx.d ./src/sdc_17xx_40xx.d ./src/sdmmc_17xx_40xx.d ./src/spi_17xx_40xx.d ./src/ssp_17xx_40xx.d ./src/stopwatch_17xx_40xx.d ./src/sysctl_17xx_40xx.d ./src/sysinit_17xx_40xx.d ./src/timer_17xx_40xx.d ./src/uart_17xx_40xx.d ./src/wwdt_17xx_40xx.d  liblpc_chip_175x_6x.a
+ 
+17:19:23 **** Clean-only build of configuration Debug for project My3DPrinter ****
+make -r -j16 clean 
+rm -rf  ./src/My3DPrinter.o ./src/PID.o ./src/UART2.o ./src/cr_cpp_config.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/fonctionsLPC.o ./src/heat.o ./src/interrupt.o ./src/mmc.o ./src/motorclass.o ./src/printer3dclass.o ./src/serialinterface.o ./src/spi.o ./src/sysinit.o  ./src/My3DPrinter.d ./src/PID.d ./src/UART2.d ./src/cr_cpp_config.d ./src/cr_startup_lpc175x_6x.d ./src/fonctionsLPC.d ./src/heat.d ./src/interrupt.d ./src/motorclass.d ./src/printer3dclass.d ./src/serialinterface.d  ./src/crp.d ./src/error.d ./src/ff.d ./src/ffsystem.d ./src/ffunicode.d ./src/mmc.d ./src/spi.d ./src/sysinit.d  My3DPrinter.axf
+ 
+17:19:27 **** Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+Building file: ../src/board.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/board.d" -MT"src/board.o" -MT"src/board.d" -o "src/board.o" "../src/board.c"
+../src/board.c: In function 'Board_I2C_Init':
+../src/board.c:267:2: warning: enumeration value 'I2C_NUM_INTERFACE' not handled in switch [-Wswitch]
+  switch (id) {
+  ^~~~~~
+Finished building: ../src/board.c
+ 
+Building file: ../src/board_sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/board_sysinit.d" -MT"src/board_sysinit.o" -MT"src/board_sysinit.d" -o "src/board_sysinit.o" "../src/board_sysinit.c"
+Finished building: ../src/board_sysinit.c
+ 
+Building file: ../src/lpc_phy_smsc87x0.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/lpc_phy_smsc87x0.d" -MT"src/lpc_phy_smsc87x0.o" -MT"src/lpc_phy_smsc87x0.d" -o "src/lpc_phy_smsc87x0.o" "../src/lpc_phy_smsc87x0.c"
+Finished building: ../src/lpc_phy_smsc87x0.c
+ 
+Building target: liblpc_board_nxp_lpcxpresso_1769.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "liblpc_board_nxp_lpcxpresso_1769.a"  ./src/board.o ./src/board_sysinit.o ./src/lpc_phy_smsc87x0.o   
+d:\program_file\MCUXpressoIDE_10.2.1_795\ide\tools\bin\arm-none-eabi-ar.exe: creating liblpc_board_nxp_lpcxpresso_1769.a
+Finished building target: liblpc_board_nxp_lpcxpresso_1769.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "liblpc_board_nxp_lpcxpresso_1769.a" ; # arm-none-eabi-objdump -h -S "liblpc_board_nxp_lpcxpresso_1769.a" >"liblpc_board_nxp_lpcxpresso_1769.lss"
+   text	   data	    bss	    dec	    hex	filename
+   2203	      0	      0	   2203	    89b	board.o (ex liblpc_board_nxp_lpcxpresso_1769.a)
+    202	      0	      0	    202	     ca	board_sysinit.o (ex liblpc_board_nxp_lpcxpresso_1769.a)
+    856	      0	     18	    874	    36a	lpc_phy_smsc87x0.o (ex liblpc_board_nxp_lpcxpresso_1769.a)
+ 
+17:19:28 **** Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+Building file: ../src/adc_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/adc_17xx_40xx.d" -MT"src/adc_17xx_40xx.o" -MT"src/adc_17xx_40xx.d" -o "src/adc_17xx_40xx.o" "../src/adc_17xx_40xx.c"
+Finished building: ../src/adc_17xx_40xx.c
+ 
+Building file: ../src/can_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/can_17xx_40xx.d" -MT"src/can_17xx_40xx.o" -MT"src/can_17xx_40xx.d" -o "src/can_17xx_40xx.o" "../src/can_17xx_40xx.c"
+../src/can_17xx_40xx.c: In function 'Chip_CAN_Init':
+../src/can_17xx_40xx.c:751:20: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t i;
+                    ^
+Finished building: ../src/can_17xx_40xx.c
+ 
+Building file: ../src/chip_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/chip_17xx_40xx.d" -MT"src/chip_17xx_40xx.o" -MT"src/chip_17xx_40xx.d" -o "src/chip_17xx_40xx.o" "../src/chip_17xx_40xx.c"
+Finished building: ../src/chip_17xx_40xx.c
+ 
+Building file: ../src/clock_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/clock_17xx_40xx.d" -MT"src/clock_17xx_40xx.o" -MT"src/clock_17xx_40xx.d" -o "src/clock_17xx_40xx.o" "../src/clock_17xx_40xx.c"
+../src/clock_17xx_40xx.c: In function 'Chip_Clock_GetSYSCLKRate':
+../src/clock_17xx_40xx.c:320:2: warning: enumeration value 'SYSCTL_PLLCLKSRC_RESERVED2' not handled in switch [-Wswitch]
+  switch (Chip_Clock_GetMainPLLSource()) {
+  ^~~~~~
+Finished building: ../src/clock_17xx_40xx.c
+ 
+Building file: ../src/cmp_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/cmp_17xx_40xx.d" -MT"src/cmp_17xx_40xx.o" -MT"src/cmp_17xx_40xx.d" -o "src/cmp_17xx_40xx.o" "../src/cmp_17xx_40xx.c"
+Finished building: ../src/cmp_17xx_40xx.c
+ 
+Building file: ../src/crc_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/crc_17xx_40xx.d" -MT"src/crc_17xx_40xx.o" -MT"src/crc_17xx_40xx.d" -o "src/crc_17xx_40xx.o" "../src/crc_17xx_40xx.c"
+Finished building: ../src/crc_17xx_40xx.c
+ 
+Building file: ../src/dac_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/dac_17xx_40xx.d" -MT"src/dac_17xx_40xx.o" -MT"src/dac_17xx_40xx.d" -o "src/dac_17xx_40xx.o" "../src/dac_17xx_40xx.c"
+Finished building: ../src/dac_17xx_40xx.c
+ 
+Building file: ../src/eeprom_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/eeprom_17xx_40xx.d" -MT"src/eeprom_17xx_40xx.o" -MT"src/eeprom_17xx_40xx.d" -o "src/eeprom_17xx_40xx.o" "../src/eeprom_17xx_40xx.c"
+Finished building: ../src/eeprom_17xx_40xx.c
+ 
+Building file: ../src/emc_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/emc_17xx_40xx.d" -MT"src/emc_17xx_40xx.o" -MT"src/emc_17xx_40xx.d" -o "src/emc_17xx_40xx.o" "../src/emc_17xx_40xx.c"
+Finished building: ../src/emc_17xx_40xx.c
+ 
+Building file: ../src/enet_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/enet_17xx_40xx.d" -MT"src/enet_17xx_40xx.o" -MT"src/enet_17xx_40xx.d" -o "src/enet_17xx_40xx.o" "../src/enet_17xx_40xx.c"
+Finished building: ../src/enet_17xx_40xx.c
+ 
+Building file: ../src/gpdma_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/gpdma_17xx_40xx.d" -MT"src/gpdma_17xx_40xx.o" -MT"src/gpdma_17xx_40xx.d" -o "src/gpdma_17xx_40xx.o" "../src/gpdma_17xx_40xx.c"
+Finished building: ../src/gpdma_17xx_40xx.c
+ 
+Building file: ../src/gpio_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/gpio_17xx_40xx.d" -MT"src/gpio_17xx_40xx.o" -MT"src/gpio_17xx_40xx.d" -o "src/gpio_17xx_40xx.o" "../src/gpio_17xx_40xx.c"
+Finished building: ../src/gpio_17xx_40xx.c
+ 
+Building file: ../src/gpioint_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/gpioint_17xx_40xx.d" -MT"src/gpioint_17xx_40xx.o" -MT"src/gpioint_17xx_40xx.d" -o "src/gpioint_17xx_40xx.o" "../src/gpioint_17xx_40xx.c"
+Finished building: ../src/gpioint_17xx_40xx.c
+ 
+Building file: ../src/i2c_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/i2c_17xx_40xx.d" -MT"src/i2c_17xx_40xx.o" -MT"src/i2c_17xx_40xx.d" -o "src/i2c_17xx_40xx.o" "../src/i2c_17xx_40xx.c"
+Finished building: ../src/i2c_17xx_40xx.c
+ 
+Building file: ../src/i2s_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/i2s_17xx_40xx.d" -MT"src/i2s_17xx_40xx.o" -MT"src/i2s_17xx_40xx.d" -o "src/i2s_17xx_40xx.o" "../src/i2s_17xx_40xx.c"
+Finished building: ../src/i2s_17xx_40xx.c
+ 
+Building file: ../src/iap.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/iap.d" -MT"src/iap.o" -MT"src/iap.d" -o "src/iap.o" "../src/iap.c"
+Finished building: ../src/iap.c
+ 
+Building file: ../src/iocon_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/iocon_17xx_40xx.d" -MT"src/iocon_17xx_40xx.o" -MT"src/iocon_17xx_40xx.d" -o "src/iocon_17xx_40xx.o" "../src/iocon_17xx_40xx.c"
+Finished building: ../src/iocon_17xx_40xx.c
+ 
+Building file: ../src/lcd_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/lcd_17xx_40xx.d" -MT"src/lcd_17xx_40xx.o" -MT"src/lcd_17xx_40xx.d" -o "src/lcd_17xx_40xx.o" "../src/lcd_17xx_40xx.c"
+Finished building: ../src/lcd_17xx_40xx.c
+ 
+Building file: ../src/pmu_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/pmu_17xx_40xx.d" -MT"src/pmu_17xx_40xx.o" -MT"src/pmu_17xx_40xx.d" -o "src/pmu_17xx_40xx.o" "../src/pmu_17xx_40xx.c"
+Finished building: ../src/pmu_17xx_40xx.c
+ 
+Building file: ../src/ring_buffer.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ring_buffer.d" -MT"src/ring_buffer.o" -MT"src/ring_buffer.d" -o "src/ring_buffer.o" "../src/ring_buffer.c"
+Finished building: ../src/ring_buffer.c
+ 
+Building file: ../src/ritimer_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ritimer_17xx_40xx.d" -MT"src/ritimer_17xx_40xx.o" -MT"src/ritimer_17xx_40xx.d" -o "src/ritimer_17xx_40xx.o" "../src/ritimer_17xx_40xx.c"
+Finished building: ../src/ritimer_17xx_40xx.c
+ 
+Building file: ../src/rtc_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/rtc_17xx_40xx.d" -MT"src/rtc_17xx_40xx.o" -MT"src/rtc_17xx_40xx.d" -o "src/rtc_17xx_40xx.o" "../src/rtc_17xx_40xx.c"
+Finished building: ../src/rtc_17xx_40xx.c
+ 
+Building file: ../src/sdc_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/sdc_17xx_40xx.d" -MT"src/sdc_17xx_40xx.o" -MT"src/sdc_17xx_40xx.d" -o "src/sdc_17xx_40xx.o" "../src/sdc_17xx_40xx.c"
+Finished building: ../src/sdc_17xx_40xx.c
+ 
+Building file: ../src/sdmmc_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/sdmmc_17xx_40xx.d" -MT"src/sdmmc_17xx_40xx.o" -MT"src/sdmmc_17xx_40xx.d" -o "src/sdmmc_17xx_40xx.o" "../src/sdmmc_17xx_40xx.c"
+Finished building: ../src/sdmmc_17xx_40xx.c
+ 
+Building file: ../src/spi_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/spi_17xx_40xx.d" -MT"src/spi_17xx_40xx.o" -MT"src/spi_17xx_40xx.d" -o "src/spi_17xx_40xx.o" "../src/spi_17xx_40xx.c"
+../src/spi_17xx_40xx.c: In function 'Chip_SPI_Int_FlushData':
+../src/spi_17xx_40xx.c:138:20: warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t tmp;
+                    ^~~
+Finished building: ../src/spi_17xx_40xx.c
+ 
+Building file: ../src/ssp_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ssp_17xx_40xx.d" -MT"src/ssp_17xx_40xx.o" -MT"src/ssp_17xx_40xx.d" -o "src/ssp_17xx_40xx.o" "../src/ssp_17xx_40xx.c"
+Finished building: ../src/ssp_17xx_40xx.c
+ 
+Building file: ../src/stopwatch_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/stopwatch_17xx_40xx.d" -MT"src/stopwatch_17xx_40xx.o" -MT"src/stopwatch_17xx_40xx.d" -o "src/stopwatch_17xx_40xx.o" "../src/stopwatch_17xx_40xx.c"
+Finished building: ../src/stopwatch_17xx_40xx.c
+ 
+Building file: ../src/sysctl_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/sysctl_17xx_40xx.d" -MT"src/sysctl_17xx_40xx.o" -MT"src/sysctl_17xx_40xx.d" -o "src/sysctl_17xx_40xx.o" "../src/sysctl_17xx_40xx.c"
+Finished building: ../src/sysctl_17xx_40xx.c
+ 
+Building file: ../src/sysinit_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/sysinit_17xx_40xx.d" -MT"src/sysinit_17xx_40xx.o" -MT"src/sysinit_17xx_40xx.d" -o "src/sysinit_17xx_40xx.o" "../src/sysinit_17xx_40xx.c"
+Finished building: ../src/sysinit_17xx_40xx.c
+ 
+Building file: ../src/timer_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/timer_17xx_40xx.d" -MT"src/timer_17xx_40xx.o" -MT"src/timer_17xx_40xx.d" -o "src/timer_17xx_40xx.o" "../src/timer_17xx_40xx.c"
+Finished building: ../src/timer_17xx_40xx.c
+ 
+Building file: ../src/uart_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/uart_17xx_40xx.d" -MT"src/uart_17xx_40xx.o" -MT"src/uart_17xx_40xx.d" -o "src/uart_17xx_40xx.o" "../src/uart_17xx_40xx.c"
+Finished building: ../src/uart_17xx_40xx.c
+ 
+Building file: ../src/wwdt_17xx_40xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/wwdt_17xx_40xx.d" -MT"src/wwdt_17xx_40xx.o" -MT"src/wwdt_17xx_40xx.d" -o "src/wwdt_17xx_40xx.o" "../src/wwdt_17xx_40xx.c"
+Finished building: ../src/wwdt_17xx_40xx.c
+ 
+Building target: liblpc_chip_175x_6x.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "liblpc_chip_175x_6x.a"  ./src/adc_17xx_40xx.o ./src/can_17xx_40xx.o ./src/chip_17xx_40xx.o ./src/clock_17xx_40xx.o ./src/cmp_17xx_40xx.o ./src/crc_17xx_40xx.o ./src/dac_17xx_40xx.o ./src/eeprom_17xx_40xx.o ./src/emc_17xx_40xx.o ./src/enet_17xx_40xx.o ./src/gpdma_17xx_40xx.o ./src/gpio_17xx_40xx.o ./src/gpioint_17xx_40xx.o ./src/i2c_17xx_40xx.o ./src/i2s_17xx_40xx.o ./src/iap.o ./src/iocon_17xx_40xx.o ./src/lcd_17xx_40xx.o ./src/pmu_17xx_40xx.o ./src/ring_buffer.o ./src/ritimer_17xx_40xx.o ./src/rtc_17xx_40xx.o ./src/sdc_17xx_40xx.o ./src/sdmmc_17xx_40xx.o ./src/spi_17xx_40xx.o ./src/ssp_17xx_40xx.o ./src/stopwatch_17xx_40xx.o ./src/sysctl_17xx_40xx.o ./src/sysinit_17xx_40xx.o ./src/timer_17xx_40xx.o ./src/uart_17xx_40xx.o ./src/wwdt_17xx_40xx.o   
+d:\program_file\MCUXpressoIDE_10.2.1_795\ide\tools\bin\arm-none-eabi-ar.exe: creating liblpc_chip_175x_6x.a
+Finished building target: liblpc_chip_175x_6x.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "liblpc_chip_175x_6x.a" ; # arm-none-eabi-objdump -h -S "liblpc_chip_175x_6x.a" >"liblpc_chip_175x_6x.lss"
+   text	   data	    bss	    dec	    hex	filename
+    928	      0	      0	    928	    3a0	adc_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   8628	      0	      0	   8628	   21b4	can_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    172	      0	      0	    172	     ac	chip_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   1596	      0	      0	   1596	    63c	clock_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	cmp_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	crc_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    140	      0	      0	    140	     8c	dac_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	eeprom_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	emc_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   1089	      0	      4	   1093	    445	enet_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   2244	     96	      8	   2348	    92c	gpdma_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	gpio_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	gpioint_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   3601	     84	    120	   3805	    edd	i2c_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   1462	      0	      0	   1462	    5b6	i2s_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    552	      0	      0	    552	    228	iap.o (ex liblpc_chip_175x_6x.a)
+    300	      0	      0	    300	    12c	iocon_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	lcd_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    264	      0	      0	    264	    108	pmu_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    962	      0	      0	    962	    3c2	ring_buffer.o (ex liblpc_chip_175x_6x.a)
+    238	      0	      0	    238	     ee	ritimer_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    738	      0	      0	    738	    2e2	rtc_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	sdc_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+      0	      0	      0	      0	      0	sdmmc_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   1036	      0	      0	   1036	    40c	spi_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   2270	      0	      0	   2270	    8de	ssp_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    362	      0	     12	    374	    176	stopwatch_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+     44	      0	      0	     44	     2c	sysctl_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    470	      0	      0	    470	    1d6	sysinit_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+    310	      0	      0	    310	    136	timer_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+   2274	      0	      1	   2275	    8e3	uart_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+     94	      0	      0	     94	     5e	wwdt_17xx_40xx.o (ex liblpc_chip_175x_6x.a)
+ 
+17:19:37 **** Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+Building file: ../src/My3DPrinter.cpp
+Building file: ../src/PID.cpp
+Building file: ../src/UART2.cpp
+Building file: ../src/cr_cpp_config.cpp
+Building file: ../src/cr_startup_lpc175x_6x.cpp
+Building file: ../src/crp.c
+Invoking: MCU C++ Compiler
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/My3DPrinter.d" -MT"src/My3DPrinter.o" -MT"src/My3DPrinter.d" -o "src/My3DPrinter.o" "../src/My3DPrinter.cpp"
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/PID.d" -MT"src/PID.o" -MT"src/PID.d" -o "src/PID.o" "../src/PID.cpp"
+Building file: ../src/error.c
+Invoking: MCU C++ Compiler
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/UART2.d" -MT"src/UART2.o" -MT"src/UART2.d" -o "src/UART2.o" "../src/UART2.cpp"
+Invoking: MCU C Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/cr_cpp_config.d" -MT"src/cr_cpp_config.o" -MT"src/cr_cpp_config.d" -o "src/cr_cpp_config.o" "../src/cr_cpp_config.cpp"
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/crp.d" -MT"src/crp.o" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/cr_startup_lpc175x_6x.d" -MT"src/cr_startup_lpc175x_6x.o" -MT"src/cr_startup_lpc175x_6x.d" -o "src/cr_startup_lpc175x_6x.o" "../src/cr_startup_lpc175x_6x.cpp"
+Invoking: MCU C Compiler
+Building file: ../src/ff.c
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/error.d" -MT"src/error.o" -MT"src/error.d" -o "src/error.o" "../src/error.c"
+Building file: ../src/ffsystem.c
+Building file: ../src/ffunicode.c
+make: stat: src/mmc.o: Bad file number
+Building file: ../src/fonctionsLPC.cpp
+Building file: ../src/heat.cpp
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Building file: ../src/interrupt.cpp
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+Invoking: MCU C++ Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/ffsystem.d" -MT"src/ffsystem.o" -MT"src/ffsystem.d" -o "src/ffsystem.o" "../src/ffsystem.c"
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/fonctionsLPC.d" -MT"src/fonctionsLPC.o" -MT"src/fonctionsLPC.d" -o "src/fonctionsLPC.o" "../src/fonctionsLPC.cpp"
+Invoking: MCU C++ Compiler
+Building file: ../src/mmc.c
+Building file: ../src/motorclass.cpp
+Invoking: MCU C++ Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/ffunicode.d" -MT"src/ffunicode.o" -MT"src/ffunicode.d" -o "src/ffunicode.o" "../src/ffunicode.c"
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/interrupt.d" -MT"src/interrupt.o" -MT"src/interrupt.d" -o "src/interrupt.o" "../src/interrupt.cpp"
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/heat.d" -MT"src/heat.o" -MT"src/heat.d" -o "src/heat.o" "../src/heat.cpp"
+Invoking: MCU C Compiler
+Invoking: MCU C++ Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/mmc.d" -MT"src/mmc.o" -MT"src/mmc.d" -o "src/mmc.o" "../src/mmc.c"
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/motorclass.d" -MT"src/motorclass.o" -MT"src/motorclass.d" -o "src/motorclass.o" "../src/motorclass.cpp"
+Building file: ../src/printer3dclass.cpp
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/printer3dclass.d" -MT"src/printer3dclass.o" -MT"src/printer3dclass.d" -o "src/printer3dclass.o" "../src/printer3dclass.cpp"
+Finished building: ../src/error.c
+../src/ff.c: In function 'putc_bfd':
+../src/ff.c:6566:17: warning: passing argument 1 of 'tchar2uni' from incompatible pointer type [-Wincompatible-pointer-types]
+  dc = tchar2uni(&tp); /* UTF-8 ==> UTF-16 */
+                 ^
+../src/ff.c:775:14: note: expected 'const TCHAR ** {aka const char **}' but argument is of type 'TCHAR ** {aka char **}'
+Finished building: ../src/crp.c
+ static DWORD tchar2uni ( /* Returns a character in UTF-16 encoding (>=0x10000 on surrogate pair, 0xFFFFFFFF on decode error) */
+              ^~~~~~~~~
+Finished building: ../src/cr_startup_lpc175x_6x.cpp
+ 
+Finished building: ../src/PID.cpp
+ 
+ 
+ 
+Building file: ../src/serialinterface.cpp
+Building file: ../src/sysinit.c
+Building file: ../src/spi.c
+Invoking: MCU C++ Compiler
+Finished building: ../src/ffsystem.c
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/serialinterface.d" -MT"src/serialinterface.o" -MT"src/serialinterface.d" -o "src/serialinterface.o" "../src/serialinterface.cpp"
+Finished building: ../src/UART2.cpp
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/sysinit.d" -MT"src/sysinit.o" -MT"src/sysinit.d" -o "src/sysinit.o" "../src/sysinit.c"
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/spi.d" -MT"src/spi.o" -MT"src/spi.d" -o "src/spi.o" "../src/spi.c"
+ 
+Finished building: ../src/fonctionsLPC.cpp
+Finished building: ../src/cr_cpp_config.cpp
+ 
+ 
+ 
+Finished building: ../src/ffunicode.c
+ 
+Finished building: ../src/mmc.c
+ 
+Finished building: ../src/motorclass.cpp
+ 
+Finished building: ../src/My3DPrinter.cpp
+../src/printer3dclass.cpp:769:13: warning: 'void cries()' defined but not used [-Wunused-function]
+ static void cries(void){
+             ^~~~~
+ 
+Finished building: ../src/heat.cpp
+ 
+Finished building: ../src/interrupt.cpp
+ 
+Finished building: ../src/spi.c
+ 
+Finished building: ../src/sysinit.c
+ 
+In file included from d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\vector:64:0,
+                 from ../src/serialinterface.h:11,
+                 from ../src/serialinterface.cpp:10:
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_vector.h: In member function 'void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = line_t; _Alloc = std::allocator<line_t>]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_vector.h:948:21: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<line_t*, std::vector<line_t> >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+In file included from d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\vector:69:0,
+                 from ../src/serialinterface.h:11,
+                 from ../src/serialinterface.cpp:10:
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const line_t&}; _Tp = line_t; _Alloc = std::allocator<line_t>]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\vector.tcc:394:7: note: parameter passing for argument of type 'std::vector<line_t>::iterator {aka __gnu_cxx::__normal_iterator<line_t*, std::vector<line_t> >}' changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/ff.c
+In file included from d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\vector:63:0,
+                 from ../src/serialinterface.h:11,
+                 from ../src/serialinterface.cpp:10:
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_move_if_noexcept_a(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = line_t*; _ForwardIterator = line_t*; _Allocator = std::allocator<line_t>]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:312:69: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+   _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
+                                                                     ^
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = std::move_iterator<line_t*>; _ForwardIterator = line_t*; _Tp = line_t]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:287:5: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+     __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+     ^~~~~~~~~~~~~~~~~~~~~~
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:287:5: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:289:63: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+     { return std::uninitialized_copy(__first, __last, __result); }
+                                                               ^
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<line_t*>; _ForwardIterator = line_t*]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:115:5: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+     uninitialized_copy(_InputIterator __first, _InputIterator __last,
+     ^~~~~~~~~~~~~~~~~~
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:115:5: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:134:41: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+  __uninit_copy(__first, __last, __result);
+ 
+                                         ^
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_copy<true>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<line_t*>; _ForwardIterator = line_t*]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:99:9: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+         __uninit_copy(_InputIterator __first, _InputIterator __last,
+         ^~~~~~~~~~~~~
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:99:9: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_uninitialized.h:101:53: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+         { return std::copy(__first, __last, __result); }
+                                                     ^
+In file included from d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\vector:60:0,
+                 from ../src/serialinterface.h:11,
+                 from ../src/serialinterface.cpp:10:
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_algobase.h: In function '_OI std::copy(_II, _II, _OI) [with _II = std::move_iterator<line_t*>; _OI = line_t*]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_algobase.h:446:5: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+     copy(_II __first, _II __last, _OI __result)
+     ^~~~
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_algobase.h:446:5: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+In file included from d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_algobase.h:67:0,
+                 from d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\vector:60,
+                 from ../src/serialinterface.h:11,
+                 from ../src/serialinterface.cpp:10:
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_iterator.h: In function 'decltype (std::__miter_base(__it.base())) std::__miter_base(std::move_iterator<_IteratorL>) [with _Iterator = line_t*]':
+d:\program_file\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\bits\stl_iterator.h:1241:5: note: parameter passing for argument of type 'std::move_iterator<line_t*>' changed in GCC 7.1
+Finished building: ../src/printer3dclass.cpp
+     __miter_base(move_iterator<_Iterator> __it)
+     ^~~~~~~~~~~~
+ 
+Finished building: ../src/serialinterface.cpp
+ 
+Building target: My3DPrinter.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\Debug" -Xlinker -Map="My3DPrinter.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "My3DPrinter_Debug.ld" -o "My3DPrinter.axf"  ./src/My3DPrinter.o ./src/PID.o ./src/UART2.o ./src/cr_cpp_config.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/fonctionsLPC.o ./src/heat.o ./src/interrupt.o ./src/mmc.o ./src/motorclass.o ./src/printer3dclass.o ./src/serialinterface.o ./src/spi.o ./src/sysinit.o   -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:       40776 B       512 KB      7.78%
+        RamLoc32:       16764 B        32 KB     51.16%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: My3DPrinter.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "My3DPrinter.axf"; # arm-none-eabi-objcopy -v -O binary "My3DPrinter.axf" "My3DPrinter.bin" ; # checksum -p LPC1769 -d "My3DPrinter.bin";
+   text	   data	    bss	    dec	    hex	filename
+  38652	   2124	  14640	  55416	   d878	My3DPrinter.axf
+ 
+17:21:40 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+17:21:41 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+17:21:42 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+Building file: ../src/ff.c
+Building file: ../src/printer3dclass.cpp
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/printer3dclass.d" -MT"src/printer3dclass.o" -MT"src/printer3dclass.d" -o "src/printer3dclass.o" "../src/printer3dclass.cpp"
+../src/ff.c: In function 'tchar2uni':
+../src/ff.c:842:7: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  *str = p; /* Next read pointer */
+       ^
+../src/ff.c: In function 'create_name':
+../src/ff.c:2875:18: warning: passing argument 1 of 'tchar2uni' from incompatible pointer type [-Wincompatible-pointer-types]
+   uc = tchar2uni(&p);   /* Get a character */
+                  ^
+../src/ff.c:775:14: note: expected 'TCHAR ** {aka char **}' but argument is of type 'const TCHAR ** {aka const char **}'
+ static DWORD tchar2uni ( /* Returns a character in UTF-16 encoding (>=0x10000 on surrogate pair, 0xFFFFFFFF on decode error) */
+              ^~~~~~~~~
+../src/printer3dclass.cpp:77:13: warning: 'void cries()' declared 'static' but never defined [-Wunused-function]
+ static void cries(void);
+             ^~~~~
+Finished building: ../src/printer3dclass.cpp
+ 
+Finished building: ../src/ff.c
+ 
+Building target: My3DPrinter.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\Debug" -Xlinker -Map="My3DPrinter.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "My3DPrinter_Debug.ld" -o "My3DPrinter.axf"  ./src/My3DPrinter.o ./src/PID.o ./src/UART2.o ./src/cr_cpp_config.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/fonctionsLPC.o ./src/heat.o ./src/interrupt.o ./src/mmc.o ./src/motorclass.o ./src/printer3dclass.o ./src/serialinterface.o ./src/spi.o ./src/sysinit.o   -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:       40776 B       512 KB      7.78%
+        RamLoc32:       16764 B        32 KB     51.16%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: My3DPrinter.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "My3DPrinter.axf"; # arm-none-eabi-objcopy -v -O binary "My3DPrinter.axf" "My3DPrinter.bin" ; # checksum -p LPC1769 -d "My3DPrinter.bin";
+   text	   data	    bss	    dec	    hex	filename
+  38652	   2124	  14640	  55416	   d878	My3DPrinter.axf
+ 
+17:22:34 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+17:22:35 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+17:22:35 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+Building file: ../src/ff.c
+Building file: ../src/printer3dclass.cpp
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/printer3dclass.d" -MT"src/printer3dclass.o" -MT"src/printer3dclass.d" -o "src/printer3dclass.o" "../src/printer3dclass.cpp"
+../src/ff.c: In function 'putc_bfd':
+../src/ff.c:6566:17: warning: passing argument 1 of 'tchar2uni' from incompatible pointer type [-Wincompatible-pointer-types]
+  dc = tchar2uni(&tp); /* UTF-8 ==> UTF-16 */
+                 ^
+../src/ff.c:775:14: note: expected 'const TCHAR ** {aka const char **}' but argument is of type 'TCHAR ** {aka char **}'
+ static DWORD tchar2uni ( /* Returns a character in UTF-16 encoding (>=0x10000 on surrogate pair, 0xFFFFFFFF on decode error) */
+              ^~~~~~~~~
+Finished building: ../src/printer3dclass.cpp
+ 
+Finished building: ../src/ff.c
+ 
+Building target: My3DPrinter.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\Debug" -Xlinker -Map="My3DPrinter.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "My3DPrinter_Debug.ld" -o "My3DPrinter.axf"  ./src/My3DPrinter.o ./src/PID.o ./src/UART2.o ./src/cr_cpp_config.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/fonctionsLPC.o ./src/heat.o ./src/interrupt.o ./src/mmc.o ./src/motorclass.o ./src/printer3dclass.o ./src/serialinterface.o ./src/spi.o ./src/sysinit.o   -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:       40776 B       512 KB      7.78%
+        RamLoc32:       16764 B        32 KB     51.16%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: My3DPrinter.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "My3DPrinter.axf"; # arm-none-eabi-objcopy -v -O binary "My3DPrinter.axf" "My3DPrinter.bin" ; # checksum -p LPC1769 -d "My3DPrinter.bin";
+   text	   data	    bss	    dec	    hex	filename
+  38652	   2124	  14640	  55416	   d878	My3DPrinter.axf
+ 
+17:23:05 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+17:23:05 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+17:23:06 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+make: Nothing to be done for `all'.
+17:23:08 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+make: Nothing to be done for `all'.
+17:24:56 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+17:24:57 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+17:24:58 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+make: Nothing to be done for `all'.
+17:25:00 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+make: Nothing to be done for `all'.
+17:28:57 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+17:28:58 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+17:28:59 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+Building file: ../src/ff.c
+Building file: ../src/printer3dclass.cpp
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/printer3dclass.d" -MT"src/printer3dclass.o" -MT"src/printer3dclass.d" -o "src/printer3dclass.o" "../src/printer3dclass.cpp"
+../src/ff.c: In function 'putc_bfd':
+../src/ff.c:6566:17: warning: passing argument 1 of 'tchar2uni' from incompatible pointer type [-Wincompatible-pointer-types]
+  dc = tchar2uni(&tp); /* UTF-8 ==> UTF-16 */
+                 ^
+../src/ff.c:775:14: note: expected 'const TCHAR ** {aka const char **}' but argument is of type 'TCHAR ** {aka char **}'
+ static DWORD tchar2uni ( /* Returns a character in UTF-16 encoding (>=0x10000 on surrogate pair, 0xFFFFFFFF on decode error) */
+              ^~~~~~~~~
+../src/printer3dclass.cpp: In member function 'void printer3d::printerMain()':
+../src/printer3dclass.cpp:175:4: error: expected ';' before 'if'
+ 6  if(flag.SD){
+    ^~
+../src/printer3dclass.cpp:178:3: warning: statement has no effect [-Wunused-value]
+   }
+   ^
+make: *** [src/printer3dclass.o] Error 1
+make: *** Waiting for unfinished jobs....
+Finished building: ../src/ff.c
+ 
+17:29:09 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+17:29:10 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+17:29:10 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+Building file: ../src/printer3dclass.cpp
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\My3DPrinter\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/printer3dclass.d" -MT"src/printer3dclass.o" -MT"src/printer3dclass.d" -o "src/printer3dclass.o" "../src/printer3dclass.cpp"
+Finished building: ../src/printer3dclass.cpp
+ 
+Building target: My3DPrinter.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\Debug" -Xlinker -Map="My3DPrinter.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "My3DPrinter_Debug.ld" -o "My3DPrinter.axf"  ./src/My3DPrinter.o ./src/PID.o ./src/UART2.o ./src/cr_cpp_config.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/fonctionsLPC.o ./src/heat.o ./src/interrupt.o ./src/mmc.o ./src/motorclass.o ./src/printer3dclass.o ./src/serialinterface.o ./src/spi.o ./src/sysinit.o   -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:       40776 B       512 KB      7.78%
+        RamLoc32:       16764 B        32 KB     51.16%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: My3DPrinter.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "My3DPrinter.axf"; # arm-none-eabi-objcopy -v -O binary "My3DPrinter.axf" "My3DPrinter.bin" ; # checksum -p LPC1769 -d "My3DPrinter.bin";
+   text	   data	    bss	    dec	    hex	filename
+  38652	   2124	  14640	  55416	   d878	My3DPrinter.axf
+ 
+17:29:15 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+17:29:15 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+17:29:16 **** Incremental Build of configuration Debug for project My3DPrinter ****
+make -r -j16 all 
+make: Nothing to be done for `all'.

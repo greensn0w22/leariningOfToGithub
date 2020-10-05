@@ -1,0 +1,63 @@
+16:42:42 **** Build of configuration Debug for project printer3D ****
+make -r -j16 all 
+Building file: ../src/cr_cpp_config.cpp
+Building file: ../src/cr_startup_lpc175x_6x.cpp
+Building file: ../src/crp.c
+Building file: ../src/interrupt.cpp
+Building file: ../src/motorclass.cpp
+Building file: ../src/printer3D.cpp
+Invoking: MCU C++ Compiler
+Building file: ../src/printer3dclass.cpp
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/cr_cpp_config.d" -MT"src/cr_cpp_config.o" -MT"src/cr_cpp_config.d" -o "src/cr_cpp_config.o" "../src/cr_cpp_config.cpp"
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/cr_startup_lpc175x_6x.d" -MT"src/cr_startup_lpc175x_6x.o" -MT"src/cr_startup_lpc175x_6x.d" -o "src/cr_startup_lpc175x_6x.o" "../src/cr_startup_lpc175x_6x.cpp"
+Invoking: MCU C Compiler
+Invoking: MCU C++ Compiler
+Invoking: MCU C++ Compiler
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/interrupt.d" -MT"src/interrupt.o" -MT"src/interrupt.d" -o "src/interrupt.o" "../src/interrupt.cpp"
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/motorclass.d" -MT"src/motorclass.o" -MT"src/motorclass.d" -o "src/motorclass.o" "../src/motorclass.cpp"
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/printer3D.d" -MT"src/printer3D.o" -MT"src/printer3D.d" -o "src/printer3D.o" "../src/printer3D.cpp"
+Building file: ../src/sysinit.c
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/printer3dclass.d" -MT"src/printer3dclass.o" -MT"src/printer3dclass.d" -o "src/printer3dclass.o" "../src/printer3dclass.cpp"
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/crp.d" -MT"src/crp.o" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\printer3D\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\src" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/sysinit.d" -MT"src/sysinit.o" -MT"src/sysinit.d" -o "src/sysinit.o" "../src/sysinit.c"
+Finished building: ../src/cr_startup_lpc175x_6x.cpp
+Finished building: ../src/crp.c
+ 
+ 
+Finished building: ../src/cr_cpp_config.cpp
+Finished building: ../src/motorclass.cpp
+ 
+ 
+../src/printer3dclass.cpp:769:13: warning: 'void cries()' defined but not used [-Wunused-function]
+ static void cries(void){
+             ^~~~~
+Finished building: ../src/sysinit.c
+ 
+Finished building: ../src/interrupt.cpp
+ 
+Finished building: ../src/printer3D.cpp
+Finished building: ../src/printer3dclass.cpp
+ 
+ 
+Building target: printer3D.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\heat\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\UART_2\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\Debug" -Xlinker -Map="printer3D.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "printer3D_Debug.ld" -o "printer3D.axf"  ./src/cr_cpp_config.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/interrupt.o ./src/motorclass.o ./src/printer3D.o ./src/printer3dclass.o ./src/sysinit.o   -lheat -lUART_2 -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:       24596 B       512 KB      4.69%
+        RamLoc32:       16468 B        32 KB     50.26%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: printer3D.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "printer3D.axf"; # arm-none-eabi-objcopy -v -O binary "printer3D.axf" "printer3D.bin" ; # checksum -p LPC1769 -d "printer3D.bin";
+   text	   data	    bss	    dec	    hex	filename
+  22480	   2116	  14352	  38948	   9824	printer3D.axf
+ 
+
+16:42:44 Build Finished (took 1s.686ms)
+

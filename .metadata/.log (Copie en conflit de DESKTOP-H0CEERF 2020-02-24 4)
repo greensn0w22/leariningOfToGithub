@@ -1,0 +1,28 @@
+
+!ENTRY com.crt.dsfdebug 4 -1 2020-02-24 19:38:10.507
+!MESSAGE Timeout waiting for StubMonSemihost: -interpreter-exec console "mon semihost enable"
+
+!STACK 0
+java.lang.InterruptedException: Timeout waiting for StubMonSemihost: -interpreter-exec console "mon semihost enable"
+	at com.crt.dsfdebug.dsf.commands.MIStubCommandBase.getResult(MIStubCommandBase.java:126)
+	at com.crt.dsfdebug.dsf.commands.MIStubCommandWrapper.getResult(MIStubCommandWrapper.java:110)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+
+!ENTRY com.crt.dsfdebug 4 4 2020-02-24 19:38:10.515
+!MESSAGE Timeout waiting for StubMonSemihost: -interpreter-exec console "mon semihost enable"
+
+!STACK 0
+java.lang.InterruptedException: Timeout waiting for StubMonSemihost: -interpreter-exec console "mon semihost enable"
+	at com.crt.dsfdebug.dsf.commands.MIStubCommandBase.getResult(MIStubCommandBase.java:126)
+	at com.crt.dsfdebug.dsf.commands.MIStubCommandWrapper.getResult(MIStubCommandWrapper.java:110)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-02-24 19:38:10.515
+!MESSAGE 	at com.crt.dsfdebug.dsf.commands.MIStubCommandBase.getResult(MIStubCommandBase.java:126)
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-02-24 19:38:10.515
+!MESSAGE 	at com.crt.dsfdebug.dsf.commands.MIStubCommandWrapper.getResult(MIStubCommandWrapper.java:110)
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-02-24 19:38:10.515
+!MESSAGE 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-02-24 19:38:10.515
+!MESSAGE 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)

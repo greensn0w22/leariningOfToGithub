@@ -1,0 +1,6 @@
+16:42:42 **** Incremental Build of configuration Debug for project heat ****
+make -r all 
+make: Nothing to be done for `all'.
+
+16:42:42 Build Finished (took 120ms)
+

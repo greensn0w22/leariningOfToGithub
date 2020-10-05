@@ -1,0 +1,27 @@
+#include "UART.h"
+#include "UART2.h"
+#include "GPIO.h"
+#include "stdint.h"
+#include "Macro.h"
+#include "Clock.h"
+
+
+
+
+
+Uart_2::Uart_2(){
+	SB(24,PCONP);
+
+}
+
+Uart_2::~Uart_2(){}
+
+void Uart_2::Init(void){
+	SB(24,PCONP);
+}
+
+extern "C" {
+	void UART2_IRQHandler(void){
+
+	}
+}

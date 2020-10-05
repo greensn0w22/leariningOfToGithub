@@ -1,0 +1,6 @@
+
+!ENTRY com.crt.log 1 0 2020-02-24 19:37:38.086
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-02-24 19:37:38.094
+!MESSAGE RedlinkServer telnet session connected on port 3025->55099 @ 127.0.0.1

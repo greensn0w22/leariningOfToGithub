@@ -1,0 +1,22 @@
+18:18:46 **** Incremental Build of configuration Debug for project Uart2 ****
+make -r all 
+Building file: ../src/Uart2.cpp
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__LPC17XX__ -I"D:\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\Uart2\inc" -I"D:\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"D:\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/Uart2.d" -MT"src/Uart2.o" -MT"src/Uart2.d" -o "src/Uart2.o" "../src/Uart2.cpp"
+Finished building: ../src/Uart2.cpp
+ 
+Building target: libUart2.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libUart2.a"  ./src/Uart2.o   
+d:\program_file\MCUXpressoIDE_10.2.1_795\ide\tools\bin\arm-none-eabi-ar.exe: creating libUart2.a
+Finished building target: libUart2.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libUart2.a" ; # arm-none-eabi-objdump -h -S "libUart2.a" >"libUart2.lss"
+   text	   data	    bss	    dec	    hex	filename
+    796	      0	      0	    796	    31c	Uart2.o (ex libUart2.a)
+ 
+
+18:18:47 Build Finished (took 1s.54ms)
+

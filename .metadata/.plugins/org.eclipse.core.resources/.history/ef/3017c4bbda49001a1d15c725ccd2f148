@@ -1,0 +1,71 @@
+/*
+===============================================================================
+ Name        : DoublePWN_C.c
+ Author      : $(author)
+ Version     :
+ Copyright   : $(copyright)
+ Description : main definition
+===============================================================================
+*/
+#include "board.h"
+#include "LPCfunctions.h"
+#include <cr_section_macros.h>
+#include "UART.h"
+
+extern char TBLPrint[8];
+extern struct FlagsCMD CMD;
+
+int main(void) {
+
+
+SystemCoreClockUpdate();
+    Board_Init();
+    Board_LED_Set(0, true);
+
+    ActiveRIT(1,2500,4); //affichage LED
+
+    TBLPrint[0] = 'd';
+    TBLPrint[1] = 'i';
+    TBLPrint[2] = 'a';
+    TBLPrint[3] = 'n';
+    TBLPrint[4] = 'a';
+    TBLPrint[5] = ' ';
+    TBLPrint[6] = ' ';
+    TBLPrint[7] = ' ';
+
+    ActiveTMR0CaptureFreq(1); //Capture de fréquence
+    //ActiveTMR0CaptureFreq(0);
+    EnableUart2(1);
+    InitFlagsConst();
+    ClrScreen();
+    UpdateAllBoard();
+
+    ActivePWN(0,0,1);
+    ActiveCAN();
+    ActiveDAC();
+
+    ActiveI2C2(1);
+    InitIIC();
+    ActiveRTC();
+    InitKeyPad();
+
+
+
+    InitSYSTick();
+
+    CMD.ActiveDot = 8; //désactive le .
+
+    volatile static int i = 0 ;
+    //volatile
+
+
+    while(1) {
+
+    	if(CMD.FlagInterrupt)
+    		CommandLine();
+    	i++ ;
+
+    	//U2THR = '1';
+    }
+    return 0 ;
+}

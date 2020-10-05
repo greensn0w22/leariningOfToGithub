@@ -1,0 +1,223 @@
+19:39:13 **** Incremental Build of configuration Debug for project lpc_board_nxp_lpcxpresso_1769 ****
+make -r all 
+make: Nothing to be done for `all'.
+19:39:14 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+19:39:15 **** Incremental Build of configuration Debug for project SD_Card ****
+make -r all 
+Building file: ../src/error.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/error.d" -MT"src/error.o" -MT"src/error.d" -o "src/error.o" "../src/error.c"
+Finished building: ../src/error.c
+ 
+Building file: ../src/ff.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Finished building: ../src/ff.c
+ 
+Building file: ../src/ffsystem.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ffsystem.d" -MT"src/ffsystem.o" -MT"src/ffsystem.d" -o "src/ffsystem.o" "../src/ffsystem.c"
+Finished building: ../src/ffsystem.c
+ 
+Building file: ../src/ffunicode.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ffunicode.d" -MT"src/ffunicode.o" -MT"src/ffunicode.d" -o "src/ffunicode.o" "../src/ffunicode.c"
+Finished building: ../src/ffunicode.c
+ 
+Building file: ../src/mmc.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/mmc.d" -MT"src/mmc.o" -MT"src/mmc.d" -o "src/mmc.o" "../src/mmc.c"
+../src/mmc.c: In function 'mmc_init':
+../src/mmc.c:146:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/mmc.c
+ 
+Building file: ../src/spi.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/spi.d" -MT"src/spi.o" -MT"src/spi.d" -o "src/spi.o" "../src/spi.c"
+Finished building: ../src/spi.c
+ 
+Building target: libSD_Card.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libSD_Card.a"  ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/mmc.o ./src/spi.o   
+d:\program_file\MCUXpressoIDE_10.2.1_795\ide\tools\bin\arm-none-eabi-ar.exe: creating libSD_Card.a
+Finished building target: libSD_Card.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libSD_Card.a" ; # arm-none-eabi-objdump -h -S "libSD_Card.a" >"libSD_Card.lss"
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	error.o (ex libSD_Card.a)
+  11990	      0	      6	  11996	   2edc	ff.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffsystem.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffunicode.o (ex libSD_Card.a)
+    450	      0	      0	    450	    1c2	mmc.o (ex libSD_Card.a)
+    814	      0	      1	    815	    32f	spi.o (ex libSD_Card.a)
+ 
+19:39:17 **** Incremental Build of configuration Debug for project SD_Card ****
+make -r all 
+Building file: ../src/error.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/error.d" -MT"src/error.o" -MT"src/error.d" -o "src/error.o" "../src/error.c"
+Finished building: ../src/error.c
+ 
+Building file: ../src/ff.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Finished building: ../src/ff.c
+ 
+Building file: ../src/ffsystem.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ffsystem.d" -MT"src/ffsystem.o" -MT"src/ffsystem.d" -o "src/ffsystem.o" "../src/ffsystem.c"
+Finished building: ../src/ffsystem.c
+ 
+Building file: ../src/ffunicode.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ffunicode.d" -MT"src/ffunicode.o" -MT"src/ffunicode.d" -o "src/ffunicode.o" "../src/ffunicode.c"
+Finished building: ../src/ffunicode.c
+ 
+Building file: ../src/mmc.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/mmc.d" -MT"src/mmc.o" -MT"src/mmc.d" -o "src/mmc.o" "../src/mmc.c"
+../src/mmc.c: In function 'mmc_init':
+../src/mmc.c:146:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/mmc.c
+ 
+Building file: ../src/spi.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/spi.d" -MT"src/spi.o" -MT"src/spi.d" -o "src/spi.o" "../src/spi.c"
+Finished building: ../src/spi.c
+ 
+Building target: libSD_Card.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libSD_Card.a"  ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/mmc.o ./src/spi.o   
+d:\program_file\MCUXpressoIDE_10.2.1_795\ide\tools\bin\arm-none-eabi-ar.exe: creating libSD_Card.a
+Finished building target: libSD_Card.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libSD_Card.a" ; # arm-none-eabi-objdump -h -S "libSD_Card.a" >"libSD_Card.lss"
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	error.o (ex libSD_Card.a)
+  11990	      0	      6	  11996	   2edc	ff.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffsystem.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffunicode.o (ex libSD_Card.a)
+    450	      0	      0	    450	    1c2	mmc.o (ex libSD_Card.a)
+    814	      0	      1	    815	    32f	spi.o (ex libSD_Card.a)
+ 
+19:39:19 **** Incremental Build of configuration Debug for project SPItest ****
+make -r -j16 all 
+Building file: ../src/SPItest.c
+Building file: ../src/sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -D__REDLIB__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SPItest\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/SPItest.d" -MT"src/SPItest.o" -MT"src/SPItest.d" -o "src/SPItest.o" "../src/SPItest.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -D__REDLIB__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SPItest\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/sysinit.d" -MT"src/sysinit.o" -MT"src/sysinit.d" -o "src/sysinit.o" "../src/sysinit.c"
+Finished building: ../src/SPItest.c
+Finished building: ../src/sysinit.c
+ 
+ 
+Building target: SPItest.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\Debug" -Xlinker -Map="SPItest.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "SPItest_Debug.ld" -o "SPItest.axf"  ./src/SPItest.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/sysinit.o   -lSD_Card -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+d:/program_file/mcuxpressoide_10.2.1_795/ide/tools/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/ld.exe: cannot open linker script file SPItest_Debug_memory.ld: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+make: *** [SPItest.axf] Error 1
+19:39:21 **** Incremental Build of configuration Debug for project SD_Card ****
+make -r all 
+Building target: libSD_Card.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libSD_Card.a"  ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/mmc.o ./src/spi.o   
+d:\program_file\MCUXpressoIDE_10.2.1_795\ide\tools\bin\arm-none-eabi-ar.exe: creating libSD_Card.a
+Finished building target: libSD_Card.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libSD_Card.a" ; # arm-none-eabi-objdump -h -S "libSD_Card.a" >"libSD_Card.lss"
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	error.o (ex libSD_Card.a)
+  11990	      0	      6	  11996	   2edc	ff.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffsystem.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffunicode.o (ex libSD_Card.a)
+    450	      0	      0	    450	    1c2	mmc.o (ex libSD_Card.a)
+    814	      0	      1	    815	    32f	spi.o (ex libSD_Card.a)
+ 
+19:39:22 **** Incremental Build of configuration Debug for project SPItest ****
+make -r -j16 all 
+Building file: ../src/SPItest.c
+Building file: ../src/sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -D__REDLIB__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SPItest\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/SPItest.d" -MT"src/SPItest.o" -MT"src/SPItest.d" -o "src/SPItest.o" "../src/SPItest.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -D__REDLIB__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SPItest\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\src" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/sysinit.d" -MT"src/sysinit.o" -MT"src/sysinit.d" -o "src/sysinit.o" "../src/sysinit.c"
+Finished building: ../src/SPItest.c
+Finished building: ../src/sysinit.c
+ 
+ 
+Building target: SPItest.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\Debug" -L"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\Debug" -Xlinker -Map="SPItest.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "SPItest_Debug.ld" -o "SPItest.axf"  ./src/SPItest.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/sysinit.o   -lSD_Card -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+d:/program_file/mcuxpressoide_10.2.1_795/ide/tools/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/ld.exe: cannot find -lSD_Card
+collect2.exe: error: ld returned 1 exit status
+make: *** [SPItest.axf] Error 1
+19:39:27 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: Nothing to be done for `all'.
+19:39:28 **** Incremental Build of configuration Debug for project SD_Card ****
+make -r all 
+Building file: ../src/error.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/error.d" -MT"src/error.o" -MT"src/error.d" -o "src/error.o" "../src/error.c"
+Finished building: ../src/error.c
+ 
+Building file: ../src/ff.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Finished building: ../src/ff.c
+ 
+Building file: ../src/ffsystem.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ffsystem.d" -MT"src/ffsystem.o" -MT"src/ffsystem.d" -o "src/ffsystem.o" "../src/ffsystem.c"
+Finished building: ../src/ffsystem.c
+ 
+Building file: ../src/ffunicode.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/ffunicode.d" -MT"src/ffunicode.o" -MT"src/ffunicode.d" -o "src/ffunicode.o" "../src/ffunicode.c"
+Finished building: ../src/ffunicode.c
+ 
+Building file: ../src/mmc.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/mmc.d" -MT"src/mmc.o" -MT"src/mmc.d" -o "src/mmc.o" "../src/mmc.c"
+../src/mmc.c: In function 'mmc_init':
+../src/mmc.c:146:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/mmc.c
+ 
+Building file: ../src/spi.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\LPC1769_SD\workplace\SD_Card\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/spi.d" -MT"src/spi.o" -MT"src/spi.d" -o "src/spi.o" "../src/spi.c"
+Finished building: ../src/spi.c
+ 
+Building target: libSD_Card.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libSD_Card.a"  ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/mmc.o ./src/spi.o   
+d:\program_file\MCUXpressoIDE_10.2.1_795\ide\tools\bin\arm-none-eabi-ar.exe: creating libSD_Card.a
+Finished building target: libSD_Card.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libSD_Card.a" ; # arm-none-eabi-objdump -h -S "libSD_Card.a" >"libSD_Card.lss"
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	error.o (ex libSD_Card.a)
+  11990	      0	      6	  11996	   2edc	ff.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffsystem.o (ex libSD_Card.a)
+      0	      0	      0	      0	      0	ffunicode.o (ex libSD_Card.a)
+    450	      0	      0	    450	    1c2	mmc.o (ex libSD_Card.a)
+    814	      0	      1	    815	    32f	spi.o (ex libSD_Card.a)
+ 

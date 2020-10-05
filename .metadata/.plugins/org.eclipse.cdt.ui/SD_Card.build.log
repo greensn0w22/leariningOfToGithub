@@ -1,0 +1,7 @@
+16:36:12 **** Clean-only build of configuration Debug for project SD_Card ****
+make -r clean 
+rm -rf  ./src/error.o ./src/ff.o ./src/ffsystem.o ./src/ffunicode.o ./src/mmc.o ./src/spi.o  ./src/error.d ./src/ff.d ./src/ffsystem.d ./src/ffunicode.d ./src/mmc.d ./src/spi.d  libSD_Card.a
+ 
+
+16:36:12 Build Finished (took 172ms)
+

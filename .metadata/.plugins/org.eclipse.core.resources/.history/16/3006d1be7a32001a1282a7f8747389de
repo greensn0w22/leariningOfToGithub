@@ -1,0 +1,34 @@
+/*
+ * Uart2.h
+ *
+ *  Created on: 8 janv. 2020
+ *      Author: Julien
+ */
+
+#ifndef UART2_H_
+#define UART2_H_
+
+
+enum TXD2{
+	P0_10 = 0x11,
+	P2_8 = 0x22
+
+
+};
+
+enum RXD2{
+	P0_11 = 0x11,
+	P2_9 = 0x22
+};
+
+class Uart2{
+private :
+	Uart2();
+	~Uart2();
+public:
+	Uart2(TXD2,RXD2);
+
+
+};
+
+#endif /* UART2_H_ */

@@ -1,0 +1,34 @@
+#include "Uart2.h"
+#include "UART.h"
+#include "Macro.h"
+#include "Clock.h"
+#include "interrupt.h"
+#include "PinsFunctions.h"
+
+Uart2::Uart2(){}
+
+Uart2::Uart2(
+	TXD2 = P2_8,
+	RXD2 = P2_9,
+	BaudRate = _115_200,
+	Parity = Disable,
+	Interupt = Disable_Int){
+
+	if(!allReadyDeclared){
+		allReadyDeclared++;
+
+		SB(24,PCONP);
+
+		if(TXD2 == P2_8){
+
+		}
+
+
+		if(P2_9){
+
+		}
+
+	}
+
+
+}

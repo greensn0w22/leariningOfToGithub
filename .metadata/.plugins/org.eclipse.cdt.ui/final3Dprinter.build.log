@@ -1,0 +1,31 @@
+17:04:20 **** Incremental Build of configuration Debug for project final3Dprinter ****
+make -r -j16 all 
+Building file: ../src/ff.c
+Building file: ../src/final3Dprinter.cpp
+Building file: ../src/mmc.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\final3Dprinter\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/ff.d" -MT"src/ff.o" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\final3Dprinter\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/final3Dprinter.d" -MT"src/final3Dprinter.o" -MT"src/final3Dprinter.d" -o "src/final3Dprinter.o" "../src/final3Dprinter.cpp"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__NEWLIB__ -DDEBUG -D__CODE_RED -DCORE_M3 -DCPP_USE_HEAP -D__LPC17XX__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\final3Dprinter\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -MMD -MP -MF"src/mmc.d" -MT"src/mmc.o" -MT"src/mmc.d" -o "src/mmc.o" "../src/mmc.c"
+../src/final3Dprinter.cpp:12:10: fatal error: board.h: No such file or directory
+ #include "board.h"
+          ^~~~~~~~~
+compilation terminated.
+make: *** [src/final3Dprinter.o] Error 1
+make: *** Waiting for unfinished jobs....
+../src/ff.c: In function 'putc_bfd':
+../src/ff.c:6566:17: warning: passing argument 1 of 'tchar2uni' from incompatible pointer type [-Wincompatible-pointer-types]
+  dc = tchar2uni(&tp); /* UTF-8 ==> UTF-16 */
+                 ^
+../src/ff.c:775:14: note: expected 'const TCHAR ** {aka const char **}' but argument is of type 'TCHAR ** {aka char **}'
+ static DWORD tchar2uni ( /* Returns a character in UTF-16 encoding (>=0x10000 on surrogate pair, 0xFFFFFFFF on decode error) */
+              ^~~~~~~~~
+Finished building: ../src/mmc.c
+ 
+Finished building: ../src/ff.c
+ 
+
+17:04:21 Build Finished (took 1s.97ms)
+

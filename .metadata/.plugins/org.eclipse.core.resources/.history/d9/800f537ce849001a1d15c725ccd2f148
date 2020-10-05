@@ -1,0 +1,36 @@
+#include "UART.h"
+#include "UART2.h"
+#include "GPIO.h"
+#include "stdint.h"
+#include "Macro.h"
+#include "Clock.h"
+
+
+
+
+
+Uart_2::Uart_2(){
+	CB(3,PCONP);
+	CB(4,PCONP);
+	CB(25,PCONP);
+	SB(24,PCONP);
+
+	PCLKSEL0 |= 0x00030000;
+
+	PINSEL0 &= (~0x00F0000);
+	PINSEL4 = ((PINSEL4&(~0x000F0000))|0x000A0000);
+	PINMODE4 = ((PINSEL4&(~0x000F0000))|0x000A0000);
+
+}
+
+Uart_2::~Uart_2(){}
+
+void Uart_2::Init(void){
+
+}
+
+extern "C" {
+	void UART2_IRQHandler(void){
+
+	}
+}

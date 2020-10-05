@@ -1,0 +1,17 @@
+/*
+ * motorclass.cpp
+ *
+ *  Created on: 6 avr. 2020
+ *      Author: Julien
+ */
+
+#include "motorclass.h"
+#include "LPC176x.h"
+
+
+	motorsXYEZ::motorsXYEZ();
+	motorsXYEZ::~motorsXYEZ();
+
+	void motorsXYEZ::step(motorLetters_e motor);
+
+	bool motorsXYEZ::changeDir(motorLetters_e motor);

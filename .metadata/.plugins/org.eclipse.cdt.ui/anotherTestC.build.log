@@ -1,0 +1,46 @@
+11:43:58 **** Build of configuration Debug for project anotherTestC ****
+make -r -j16 all 
+Building file: ../src/anotherTestC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -DCR_INTEGER_PRINTF -DCR_PRINTF_CHAR -D__LPC17XX__ -D__REDLIB__ -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\anotherTestC\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_board_nxp_lpcxpresso_1769\inc" -I"C:\Users\Julien\Dropbox\Cegep3Annee\3DPrinterProject\workPlaceCode\lpc_chip_175x_6x\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/anotherTestC.d" -MT"src/anotherTestC.o" -MT"src/anotherTestC.d" -o "src/anotherTestC.o" "../src/anotherTestC.c"
+../src/anotherTestC.c: In function 'flip':
+../src/anotherTestC.c:25:2: error: 'FIO0SET1' undeclared (first use in this function)
+  FIO0SET1 |= 0x4;
+  ^~~~~~~~
+../src/anotherTestC.c:25:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/anotherTestC.c:27:2: error: 'FIO0CLR1' undeclared (first use in this function); did you mean 'FIO0SET1'?
+  FIO0CLR1 |= 0x4;
+  ^~~~~~~~
+  FIO0SET1
+../src/anotherTestC.c: In function 'main':
+../src/anotherTestC.c:34:5: warning: implicit declaration of function '__set_PINMODE'; did you mean '__set_PRIMASK'? [-Wimplicit-function-declaration]
+     __set_PINMODE(0,10,0); //pwm 0.10
+     ^~~~~~~~~~~~~
+     __set_PRIMASK
+../src/anotherTestC.c:39:5: error: 'FIO0DIR' undeclared (first use in this function)
+     FIO0DIR  |= 0x00080400; //avtive les bit
+     ^~~~~~~
+../src/anotherTestC.c:40:5: error: 'FIO2DIR0' undeclared (first use in this function); did you mean 'FIO0DIR'?
+     FIO2DIR0 |= 0xC0;
+     ^~~~~~~~
+     FIO0DIR
+../src/anotherTestC.c:42:5: error: 'FIO2CLR0' undeclared (first use in this function); did you mean 'FIO2DIR0'?
+     FIO2CLR0 |= 0xC0;
+     ^~~~~~~~
+     FIO2DIR0
+../src/anotherTestC.c:43:5: error: 'FIO0CLR' undeclared (first use in this function); did you mean 'FIO2CLR0'?
+     FIO0CLR  |= 0x00080400;
+     ^~~~~~~
+     FIO2CLR0
+../src/anotherTestC.c:44:5: error: 'FIO2SET0' undeclared (first use in this function); did you mean 'FIO2CLR0'?
+     FIO2SET0 |= 0x40; //unsleep EXY
+     ^~~~~~~~
+     FIO2CLR0
+../src/anotherTestC.c:65:6: error: 'FIO0PIN' undeclared (first use in this function); did you mean 'FIO0DIR'?
+      FIO0PIN = (FIO0PIN&(~0x00080000))|(test<<19);
+      ^~~~~~~
+      FIO0DIR
+make: *** [src/anotherTestC.o] Error 1
+
+11:43:58 Build Finished (took 626ms)
+

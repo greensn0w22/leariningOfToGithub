@@ -1,0 +1,7 @@
+15:36:39 **** Clean-only build of configuration Debug for project TestZone ****
+make -r -j16 clean 
+rm -rf  ./src/TestZone.o ./src/cr_cpp_config.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/sysinit.o  ./src/TestZone.d ./src/cr_cpp_config.d ./src/cr_startup_lpc175x_6x.d  ./src/crp.d ./src/sysinit.d  TestZone.axf
+ 
+
+15:36:39 Build Finished (took 162ms)
+

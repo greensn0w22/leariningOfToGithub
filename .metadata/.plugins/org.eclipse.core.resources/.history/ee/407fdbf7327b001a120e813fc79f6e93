@@ -1,0 +1,76 @@
+/*
+ * fonctionsLPC.cpp
+ *
+ *  Created on: 11 févr. 2020
+ *      Author: Julien
+ */
+
+#include "fonctionsLPC.h"
+#include <stdint.h>
+
+
+
+uint8_t testLenght(uint64_t param){
+	uint8_t i = 0;
+
+
+	for(i=1; (param>>i) !=  0; i++){}
+
+	return i;
+}
+
+//convertit une valeur entière en string
+void convNumToString(uint64_t number, char *tbl){
+	uint64_t i,j=0;
+	uint64_t newNumber = number, temp = 0;
+
+	for(i = 0; number >= 10; i++){
+		number /= 10;
+	}
+	number = newNumber;
+
+	while(i >= 1){
+		temp = power(10,i);
+		*(tbl+j) = (number/temp +'0');
+		number %= temp;
+		i--;
+		j++;
+
+	}
+
+	*(tbl+j) = number + '0';
+	j++;
+	*(tbl+j) = '\0';
+}
+
+uint64_t power(uint32_t number, uint8_t pow){
+	uint32_t base = number;
+	if(pow){
+		for(uint8_t i = 1; i < pow; i++){
+			number *= base;
+		}
+	}
+	else{
+		number = 1;
+	}
+	return number;
+}
+
+
+uint32_t convStringToNum(char* pointer, int lenght){
+	uint32_t finalValue = 0;
+	uint32_t tempValue[10] = {0};
+	signed int i = lenght, j = 0;
+
+	for(i; i>0; i--){
+		if(i != 1)
+			tempValue[j] = (*(pointer++)-'0')*((i-1)*10);
+		else
+			tempValue[j] = (*(pointer++)-'0');
+		j++;
+	}
+	for(i=0; i<10; i++)
+		finalValue += tempValue[i];
+
+	return finalValue;
+}

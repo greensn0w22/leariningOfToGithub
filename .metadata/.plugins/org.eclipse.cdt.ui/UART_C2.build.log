@@ -1,0 +1,6 @@
+10:00:54 **** Incremental Build of configuration Debug for project UART_C2 ****
+make -r -j16 all 
+make: Nothing to be done for `all'.
+
+10:00:54 Build Finished (took 133ms)
+

@@ -1,0 +1,276 @@
+/*
+ * motorclass.cpp
+ *
+ *  Created on: 6 avr. 2020
+ *      Author: Julien
+ */
+
+#include "motorclass.h"
+#include "LPC176x.h"
+
+/****************************
+ * 	   PRIVATE DEFINITIONS
+ ****************************/
+#ifdef BOARD_V1
+#define RMV_SLEEP_Z()		FIO2SET0 |= 0x80
+#define SET_SLEEP_Z()		FIO2CLR0 |= 0x80
+#define RMV_SLEEP_XYE()		FIO2SET0 |= 0x40
+#define SET_SLEEP_XYE()		FIO2CLR0 |= 0x40
+
+#define DIR_X(n)			FIO0PIN2 = ((FIO0PIN2 & 0xBF) | (n<<6))
+#define DIR_Y(n)			FIO0PIN2 = ((FIO0PIN2 & 0xFD) | (n<<1))
+#define DIR_Z(n)			FIO0PIN2 = ((FIO0PIN2 & 0xFB) | (n<<2))
+#define DIR_E(n)			FIO0PIN2 = ((FIO0PIN2 & 0xF7) | (n<<3))
+#endif
+
+#ifdef BOARD_V2
+#define RMV_SLEEP_Z()		FIO1SET3 |= 0x10
+#define SET_SLEEP_Z()		FIO1CLR3 |= 0x10
+#define RMV_SLEEP_XYE()		FIO1SET3 |= 0x08
+#define SET_SLEEP_XYE()		FIO1CLR3 |= 0x08
+
+#define DIR_X(n)			FIO0PIN2 = ((FIO0PIN2 & 0xFE) | (n<<0))
+#define DIR_Y(n)			FIO0PIN2 = ((FIO0PIN2 & 0xFD) | (n<<1))
+#define DIR_Z(n)			FIO0PIN2 = ((FIO0PIN2 & 0xFB) | (n<<2))
+#define DIR_E(n)			FIO0PIN2 = ((FIO0PIN2 & 0xF7) | (n<<3))
+#endif
+
+#define SET_BOTH_SLEEP()	SET_SLEEP_XYE(); SET_SLEEP_Z()
+#define RMV_BOTH_SLEEP()	RMV_SLEEP_Z(); RMV_SLEEP_XYE()
+
+
+#define STEP_X()			T0EMR |= 0x01; motorInfo.X = 1; T0TCR = 1
+#define STEP_Y()			T1EMR |= 0x01; motorInfo.Y = 1; T1TCR = 1
+#define STEP_Z()			T2EMR |= 0x01; motorInfo.Z = 1; T2TCR = 1
+#define STEP_E()			T3EMR |= 0x01; motorInfo.E = 1; T3TCR = 1
+
+
+/****************************
+ * 	   PRIVATE STRUCTURE
+ ****************************/
+extern "C"
+{
+	struct motorMouvement_t{
+		bool X:1;
+		bool Y:1;
+		bool Z:1;
+		bool E:1;
+		bool Xdir:1;
+		bool Ydir:1;
+		bool Zdir:1;
+		bool Edir:1;
+	};
+
+}
+/****************************
+ * 	   PRIVATE DECLARATION
+ ****************************/
+motorMouvement_t motorInfo = {0};
+/****************************
+ *     CLASS FUNCTIONS
+ ****************************/
+motorsXYEZ::motorsXYEZ(){
+
+//sleep///////////////////////////////////////////////
+#ifdef BOARD_V1
+	__set_PINSEL(2,6,0x00);
+	__set_PINSEL(2,7,0x00);
+	FIO2DIR0 |= 0xC0;
+#endif
+
+#ifdef BOARD_V2
+	__set_PINSEL(1,19,0x00);
+	__set_PINSEL(1,20,0x00);
+	FIO1DIR3 |= 0x18;
+#endif
+SET_BOTH_SLEEP();
+////////////////////////////////////////////////////
+
+__set_PCONP(PCTIM0, 1);
+__set_PCONP(PCTIM1, 1);
+__set_PCONP(PCTIM2, 1);
+__set_PCONP(PCTIM3, 1);
+
+__set_PCLKSEL(PCLK_TIMER0,PCLKDIV_8);
+__set_PCLKSEL(PCLK_TIMER1,PCLKDIV_8);
+__set_PCLKSEL(PCLK_TIMER2,PCLKDIV_8);
+__set_PCLKSEL(PCLK_TIMER3,PCLKDIV_8);
+
+//X
+#ifdef BOARD_V1
+__set_PINSEL(1,28,0);
+__set_PINSEL(3,25,2); //MAT0.0
+__set_PINOD(3,25,0);
+__set_PINMODE(0,22,0); //dir
+__set_PINOD(0,22,0);
+#endif
+#ifdef BOARD_V2
+__set_PINSEL(3,25,0); //MAT0.0
+__set_PINSEL(1,28,3); //MAT0.0
+__set_PINOD(1,28,0);
+__set_PINSEL(0,16,0); //dir
+__set_PINOD(0,16,0);
+#endif
+//Y
+__set_PINSEL(1,22,3); //MAT1.0
+__set_PINOD(1,22,0);
+__set_PINSEL(0,17,0); //dir
+__set_PINOD(0,17,0);
+//Z
+__set_PINSEL(4,28,2); //MAT2.0
+__set_PINOD(4,28,0);
+__set_PINSEL(0,18,0); //dir
+__set_PINOD(0,18,0);
+//E
+__set_PINSEL(0,10,3); //MAT3.0
+__set_PINOD(0,10,0);
+__set_PINSEL(0,19,0); //dir
+__set_PINOD(0,19,0);
+//set dir to 0
+
+#ifdef BOARD_V1
+FIO0DIR2 |= 0x4E;
+FIO0CLR2 = 0x4E;
+#endif
+
+#ifdef BOARD_V2
+FIO0DIR2 |= 0x0F;
+FIO0CLR2 = 0x0F;
+#endif
+
+
+
+T0TCR  = 0x02; //reset TC, counter no enable
+T0MR0  = 200; //a little more than 2uS (min 1.9 uS)
+T0MR1  = 800; //a little more than 2uS (min 1.9 uS)
+T0EMR  = 0x10; //clear Mx.0 bit when match
+T0IR   = 0x02; //interrupt on MR1 math
+T0CTCR = 0x00; //Count with MR
+T0MCR  = 0x38; // stop, reset TC, interrupt on MR1 match
+T0TCR  = 0; //rmv the rest on TC
+
+T1TCR  = 0x02; //reset TC, counter no enable
+T1MR0  = 200;  //a little more than 2uS (min 1.9 uS)
+T1MR1  = 2000; //a little more than 2uS (min 1.9 uS)
+T1EMR  = 0x10; //clear Mx.0 bit when match
+T1IR   = 0x02; //interrupt on MR1 math
+T1CTCR = 0x00; //Count with MR
+T1MCR  = 0x38; // stop, reset TC, interrupt on MR1 match
+T1TCR  = 0; //rmv the rest on TC
+
+T2TCR  = 0x02; //reset TC, counter no enable
+T2MR0  = 200;  //a little more than 2uS (min 1.9 uS)
+T2MR1  = 1600; //a little more than 2uS (min 1.9 uS)
+T2EMR  = 0x10; //clear Mx.0 bit when match
+T2IR   = 0x02; //interrupt on MR1 math
+T2CTCR = 0x00; //Count with MR
+T2MCR  = 0x38; // stop, reset TC, interrupt on MR1 match
+T2TCR  = 0; //rmv the rest on TC
+
+T3TCR  = 0x02; //reset TC, counter no enable
+T3MR0  = 200;  //a little more than 2uS (min 1.9 uS)
+T3MR1  = 800; //a little more than 2uS (min 1.9 uS)
+T3EMR  = 0x10; //clear Mx.0 bit when match
+T3IR   = 0x02; //interrupt on MR1 math
+T3CTCR = 0x00; //Count with MR
+T3MCR  = 0x38; // stop, reset TC, interrupt on MR1 match
+T3TCR  = 0; //rmv the rest on TC
+
+ISER |= 0x1E;
+__set_irqn_priority(TIMER0_IRQn, 0x01);
+__set_irqn_priority(TIMER1_IRQn, 0x01);
+__set_irqn_priority(TIMER2_IRQn, 0x01);
+__set_irqn_priority(TIMER3_IRQn, 0x01);
+
+
+}
+motorsXYEZ::~motorsXYEZ()
+{
+	SET_BOTH_SLEEP();
+}
+
+void motorsXYEZ::step(motorLetters_e motor)
+{
+	switch (motor)
+	{
+		case _x:
+			while(motorInfo.X){}
+			STEP_X();
+			break;
+		case _y:
+			while(motorInfo.Y){}
+			STEP_Y();
+			break;
+		case _z:
+			while(motorInfo.Z){}
+			STEP_Z();
+			break;
+		case _e:
+			while(motorInfo.E){}
+			STEP_E();
+			break;
+	}
+}
+
+bool motorsXYEZ::changeDir(motorLetters_e motor, bool direction){
+	//bool mDirection;
+
+	switch (motor) {
+		case _x:
+			DIR_X(direction);
+			break;
+		case _y:
+			DIR_Y(direction);
+			break;
+		case _z:
+			DIR_Z(direction);
+			break;
+		default:
+			break;
+	}
+	return direction;
+}
+
+void motorsXYEZ::sleepXYE(bool state)
+{
+	if(state == true)
+		SET_SLEEP_XYE();
+	else
+		RMV_SLEEP_XYE();
+}
+
+void motorsXYEZ::sleepZ(bool state)
+{
+	if(state)
+		SET_SLEEP_Z();
+	else
+		RMV_SLEEP_Z();
+}
+
+
+extern "C"
+{
+
+	void TIMER0_IRQHandler(void)
+	{
+		T0IR = 0x03;
+		motorInfo.X=0;
+	}
+	void TIMER1_IRQHandler(void)
+	{
+		T1IR = 0x03;
+		motorInfo.Y=0;
+	}
+	void TIMER2_IRQHandler(void)
+	{
+		T2IR = 0x03;
+		motorInfo.Z=0;
+	}
+	void TIMER3_IRQHandler(void)
+	{
+		T3IR = 0x03;
+		motorInfo.E=0;
+	}
+
+
+}
